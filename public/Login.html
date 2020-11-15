@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Log-In</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <script src="https://kit.fontawesome.com/0ff6456f25.js" crossorigin="anonymous"></script>
+        <style>
+            body {
+                background-image: url('/images/background.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .img {
+                width: 50vh;
+                height: 50vh;
+                margin-left: 40%;
+                margin-top: 42%;
+            }
+
+            #icn {
+                font-size: 25px;
+                margin: 19px;
+                color: white;
+                cursor: pointer;
+            }
+
+            .mobileShow {
+                display: inline;
+            }
+
+            /* Smartphone Portrait and Landscape */
+            @media only screen and (min-device-width: 320px) and (max-device-width: 580px) {
+                .mobileShow {
+                    display: inline;
+                }
+            }
+
+            .mobileHide {
+                display: inline;
+            }
+
+            /* Smartphone Portrait and Landscape */
+            @media only screen and (min-device-width: 320px) and (max-device-width: 580px) {
+                .mobileHide {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav
+            class="navbar navbar-expand-sm navbar-light bg-light shadow sticky-top"
+            style="background-color: whitesmoke"
+        >
+            <a class="navbar-brand" href="#">🅲🅾🅳🅴-🅿🅻🅰🅶</a>
+            <button
+                class="navbar-toggler d-lg-none"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapsibleNavId"
+                aria-controls="collapsibleNavId"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item ml-4">
+                        <a class="nav-link" href="#"><b> Home </b> <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link" href="#"> <b>Pricing </b> </a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link" href="#"><b> API </b></a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link" href="#"><b> Contact-us </b></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row" style="height: 100vh">
+                <!--NAV-BAR-->
+
+                <!--MIDDLE-COLOUM-->
+                <div class="col-md-6 align-items-center justify-content-center mobileShow">
+                    <div class="row d-flex align-items-center justify-content-center" style="height: 20vh"></div>
+                    <div class="row shadow ml-0 mr-5">
+                        <div
+                            class="col-4 text-dark d-flex align-items-center justify-content-center"
+                            style="height: 50vh; background-color: #00cba9"
+                        >
+                            <b>
+                                Welcome to our site <br />
+                                Login Here..!!
+                            </b>
+                        </div>
+                        <div
+                            class="col-8 d-flex align-items-center justify-content-center"
+                            style="height: 50vh; background: whitesmoke"
+                        >
+                            <form action="/api/v1/login" method="POST">
+                                <div class="ml-5 form-group display-3">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        name="email"
+                                        placeholder="Enter email-id"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        name="password"
+                                        placeholder="Enter Password"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <input
+                                        type="submit"
+                                        class="rounded-pill form-control btn btn-info"
+                                        name=""
+                                        placeholder="User-name"
+                                    />
+                                </div>
+                                <div class="form-group text-center">
+                                    <a href="sign-up.html">
+                                        Dont't have account ?
+                                        <br />
+                                    </a>
+                                    <a href="fp.html"> Forgot Password ? </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 bg-inf1o mobileHide">
+                    <img src="/images/1.svg" alt="png" class="img" />
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer font-small fixed-bottom" style="background-color: whitesmoke; color: black">
+            <div class="footer-copyright text-center">Created by :Code plag & team</div>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center">
+                © 2020 Copyright:
+                <a href="https://mdbootstrap.com/"> CDAC</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

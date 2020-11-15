@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html><head><title>200240320002_linklist.cpp</title></head>
+<body BGCOLOR="#ffffff">
+<hr><center> <h2>200240320002_linklist.cpp</h2> </center><hr><pre>#include&lt;iostream&gt;
+using namespace std;
+
+class node
+{
+    
+<a style = " color: PaleVioletRed ; font-weight: bold; font-size: 13px;text-decoration: none " name = "30" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#30 " target = "iframe_2" >        int data;
+</a><a style = " color: PaleVioletRed ; font-weight: bold; font-size: 13px;text-decoration: none " name = "30" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#30 " target = "iframe_2" >        node *next;
+</a><a style = " color: PaleVioletRed ; font-weight: bold; font-size: 13px;text-decoration: none " name = "30" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#30 " target = "iframe_2" >    public:
+</a>        friend class linklist;
+<a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >};
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >class linklist
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >{
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >    private:
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >        node *head;
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >    public :
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >        linklist()
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >        {
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >            head = NULL;
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "4" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#4 " target = "iframe_2" >        }
+</a><a style = " color: PaleTurquoise ; font-weight: bold; font-size: 13px;text-decoration: none " name = "37" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#37 " target = "iframe_2" >        node* gethead()
+</a><a style = " color: PaleTurquoise ; font-weight: bold; font-size: 13px;text-decoration: none " name = "37" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#37 " target = "iframe_2" >       {
+</a><a style = " color: PaleTurquoise ; font-weight: bold; font-size: 13px;text-decoration: none " name = "37" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#37 " target = "iframe_2" >         return head;
+</a><a style = " color: PaleTurquoise ; font-weight: bold; font-size: 13px;text-decoration: none " name = "37" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#37 " target = "iframe_2" >       }
+</a><a style = " color: chartreuse; font-weight: bold; font-size: 13px;text-decoration: none " name = "90" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#90 " target = "iframe_2" >       ~linklist()
+</a><a style = " color: chartreuse; font-weight: bold; font-size: 13px;text-decoration: none " name = "90" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#90 " target = "iframe_2" >       {
+</a><a style = " color: SeaGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "33" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#33 " target = "iframe_2" >           while(head != NULL)
+</a><a style = " color: SeaGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "33" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#33 " target = "iframe_2" >           {
+</a><a style = " color: SeaGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "33" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#33 " target = "iframe_2" >               node *temp = head;
+</a><a style = " color: SeaGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "33" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#33 " target = "iframe_2" >               head = head -&gt; next;
+</a><a style = " color: DarkViolet ; font-weight: bold; font-size: 13px;text-decoration: none " name = "12" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#12 " target = "iframe_2" >               delete temp;
+</a><a style = " color: DarkViolet ; font-weight: bold; font-size: 13px;text-decoration: none " name = "12" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#12 " target = "iframe_2" >           }
+</a><a style = " color: DarkViolet ; font-weight: bold; font-size: 13px;text-decoration: none " name = "12" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#12 " target = "iframe_2" >       }
+</a>
+<a style = " color: DarkViolet ; font-weight: bold; font-size: 13px;text-decoration: none " name = "12" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#12 " target = "iframe_2" >    void AddFirst(int d)
+</a><a style = " color: DarkViolet ; font-weight: bold; font-size: 13px;text-decoration: none " name = "12" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#12 " target = "iframe_2" >    {
+</a><a style = " color: DarkViolet ; font-weight: bold; font-size: 13px;text-decoration: none " name = "12" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#12 " target = "iframe_2" >        node *newnode;
+</a>        int data;
+<a style = " color: DarkOrange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "53" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#53 " target = "iframe_2" >        newnode = new node;
+</a><a style = " color: DarkOrange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "53" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#53 " target = "iframe_2" >        newnode -&gt; data = d;
+</a><a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "8" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#8 " target = "iframe_2" >        newnode -&gt; next = NULL;
+</a>        
+<a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "8" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#8 " target = "iframe_2" >        if (head == NULL)
+</a><a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "8" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#8 " target = "iframe_2" >        {
+</a><a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "8" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#8 " target = "iframe_2" >            head = newnode;
+</a><a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "8" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#8 " target = "iframe_2" >        }
+</a><a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "8" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#8 " target = "iframe_2" >        else
+</a><a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "8" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#8 " target = "iframe_2" >            {
+</a><a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "8" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#8 " target = "iframe_2" >             newnode-&gt; next = head;
+</a><a style = " color: CornflowerBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "91" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#91 " target = "iframe_2" >             head = newnode;
+</a><a style = " color: CornflowerBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "91" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#91 " target = "iframe_2" >            }
+</a><a style = " color: CornflowerBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "91" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#91 " target = "iframe_2" >    }
+</a>    
+<a style = " color: LimeGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "21" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#21 " target = "iframe_2" >     void AddLast(int d)
+</a><a style = " color: LimeGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "21" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#21 " target = "iframe_2" >    {
+</a><a style = " color: LimeGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "21" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#21 " target = "iframe_2" >        node *newnode;
+</a>        int data;
+        newnode = new node;
+        newnode -&gt; data = d;
+<a style = " color: LightPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "40" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#40 " target = "iframe_2" >        newnode -&gt; next = NULL;
+</a><a style = " color: LightPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "40" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#40 " target = "iframe_2" >            if(head==NULL)
+</a><a style = " color: LightPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "40" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#40 " target = "iframe_2" >            {
+</a><a style = " color: LightSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "39" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#39 " target = "iframe_2" >                  head = newnode;
+</a><a style = " color: LightSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "39" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#39 " target = "iframe_2" >            }
+</a><a style = " color: LightSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "39" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#39 " target = "iframe_2" >            else
+</a><a style = " color: LightSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "39" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#39 " target = "iframe_2" >            {
+</a><a style = " color: LightSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "39" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#39 " target = "iframe_2" >                 node *temp;
+</a><a style = " color: purple ; font-weight: bold; font-size: 13px;text-decoration: none " name = "31" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#31 " target = "iframe_2" >                 temp=head;
+</a><a style = " color: MediumBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "25" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#25 " target = "iframe_2" >                while(temp-&gt;next != NULL)
+</a><a style = " color: MediumBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "25" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#25 " target = "iframe_2" >                {   
+</a><a style = " color: MediumBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "25" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#25 " target = "iframe_2" >                    temp = temp-&gt;next;
+</a>                }
+<a style = " color: chartreuse; font-weight: bold; font-size: 13px;text-decoration: none " name = "6" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#6 " target = "iframe_2" >                temp-&gt;next = newnode;
+</a><a style = " color: chartreuse; font-weight: bold; font-size: 13px;text-decoration: none " name = "6" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#6 " target = "iframe_2" >            }
+</a><a style = " color: chartreuse; font-weight: bold; font-size: 13px;text-decoration: none " name = "6" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#6 " target = "iframe_2" >    }
+</a>    
+<a style = " color: chartreuse; font-weight: bold; font-size: 13px;text-decoration: none " name = "6" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#6 " target = "iframe_2" >    void AddNodeAfter(int after, int d)
+</a><a style = " color: chartreuse; font-weight: bold; font-size: 13px;text-decoration: none " name = "6" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#6 " target = "iframe_2" >    {
+</a><a style = " color: chartreuse; font-weight: bold; font-size: 13px;text-decoration: none " name = "6" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#6 " target = "iframe_2" >       node*newnode;
+</a><a style = " color: DarkViolet ; font-weight: bold; font-size: 13px;text-decoration: none " name = "54" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#54 " target = "iframe_2" >       newnode = new (node);
+</a><a style = " color: DarkViolet ; font-weight: bold; font-size: 13px;text-decoration: none " name = "54" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#54 " target = "iframe_2" >        newnode -&gt; data = d;
+</a>        newnode -&gt; next = NULL;
+        node *temp;
+<a style = " color: Firebrick ; font-weight: bold; font-size: 13px;text-decoration: none " name = "15" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#15 " target = "iframe_2" >        temp = head;
+</a><a style = " color: Firebrick ; font-weight: bold; font-size: 13px;text-decoration: none " name = "15" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#15 " target = "iframe_2" >            while(temp != NULL && temp -&gt; data != after)
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "42" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#42 " target = "iframe_2" >            {
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "42" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#42 " target = "iframe_2" >                temp = temp -&gt; next;
+</a><a style = " color: LightSalmon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "61" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#61 " target = "iframe_2" >            }
+</a><a style = " color: LightSalmon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "61" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#61 " target = "iframe_2" >            if (temp==NULL)
+</a>            {
+                
+<a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "52" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#52 " target = "iframe_2" >            }
+</a><a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "52" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#52 " target = "iframe_2" >            else
+</a><a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "52" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#52 " target = "iframe_2" >            {
+</a><a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "52" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#52 " target = "iframe_2" >                newnode -&gt; next = temp-&gt; next;
+</a><a style = " color: DarkOrange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "11" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#11 " target = "iframe_2" >                temp-&gt; next = newnode;
+</a><a style = " color: DarkOrange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "11" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#11 " target = "iframe_2" >            }
+</a><a style = " color: DarkOrange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "11" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#11 " target = "iframe_2" >    }
+</a>    
+<a style = " color: DarkOrange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "11" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#11 " target = "iframe_2" >    void AddNodeBefore(int before, int d)
+</a><a style = " color: DarkOrange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "11" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#11 " target = "iframe_2" >    {
+</a>            
+<a style = " color: DarkOrange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "11" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#11 " target = "iframe_2" >        node *newnode;
+</a><a style = " color: RoyalBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "74" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#74 " target = "iframe_2" >        int data;
+</a><a style = " color: RoyalBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "74" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#74 " target = "iframe_2" >        newnode = new node;
+</a>        newnode -&gt; data = d;
+<a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "9" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#9 " target = "iframe_2" >        newnode -&gt; next = NULL;
+</a><a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "9" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#9 " target = "iframe_2" >        if (head == NULL)
+</a><a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "9" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#9 " target = "iframe_2" >        {
+</a><a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "9" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#9 " target = "iframe_2" >            head = newnode;
+</a><a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "9" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#9 " target = "iframe_2" >        }
+</a><a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "9" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#9 " target = "iframe_2" >        else 
+</a><a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "9" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#9 " target = "iframe_2" >        {
+</a><a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "9" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#9 " target = "iframe_2" >            node *t1;
+</a>            node *t2;
+<a style = " color: LawnGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "17" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#17 " target = "iframe_2" >            t1 =t2 = head;
+</a>            
+<a style = " color: DeepSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "14" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#14 " target = "iframe_2" >        while (t1 != NULL && t1-&gt;data != before)
+</a><a style = " color: DeepSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "14" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#14 " target = "iframe_2" >        {
+</a><a style = " color: DeepSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "14" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#14 " target = "iframe_2" >            t2 =t1;
+</a><a style = " color: DeepSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "14" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#14 " target = "iframe_2" >            t1 = t1-&gt;next;
+</a>        }
+<a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "45" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#45 " target = "iframe_2" >        if (t1 == head)
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "45" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#45 " target = "iframe_2" >        {
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "45" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#45 " target = "iframe_2" >             newnode -&gt; next= t1;
+</a>               head = newnode;
+        }
+<a style = " color: Orange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "68" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#68 " target = "iframe_2" >        else if (t1 != NULL)
+</a><a style = " color: Orange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "68" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#68 " target = "iframe_2" >        {
+</a><a style = " color: Orange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "68" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#68 " target = "iframe_2" >           newnode-&gt; next =t1;
+</a><a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "51" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#51 " target = "iframe_2" >           t2-&gt;next= newnode;
+</a><a style = " color: brown; font-weight: bold; font-size: 13px;text-decoration: none " name = "51" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#51 " target = "iframe_2" >        }
+</a>        else if(t1==NULL)
+        {
+            
+<a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "88" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#88 " target = "iframe_2" >        }
+</a>        
+<a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "88" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#88 " target = "iframe_2" >        }
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "88" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#88 " target = "iframe_2" >    }
+</a>
+<a style = " color: PaleGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "29" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#29 " target = "iframe_2" >void DelNode(int after)
+</a><a style = " color: PaleGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "29" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#29 " target = "iframe_2" >    {
+</a><a style = " color: PaleGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "29" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#29 " target = "iframe_2" >        node *t1;
+</a>        node *t2;
+<a style = " color: OrangeRed ; font-weight: bold; font-size: 13px;text-decoration: none " name = "27" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#27 " target = "iframe_2" >        t1 =t2 = head;
+</a><a style = " color: HotPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "16" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#16 " target = "iframe_2" >        while (t1-&gt;data != after)
+</a><a style = " color: HotPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "16" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#16 " target = "iframe_2" >        {
+</a><a style = " color: HotPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "16" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#16 " target = "iframe_2" >            t2 =t1;
+</a><a style = " color: HotPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "16" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#16 " target = "iframe_2" >            t1 = t1-&gt; next;
+</a>        }
+<a style = " color: MediumBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "67" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#67 " target = "iframe_2" >        t2-&gt; next = t1-&gt; next;
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "86" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#86 " target = "iframe_2" >        t1-&gt; next = NULL;
+</a><a style = " color: LightCoral ; font-weight: bold; font-size: 13px;text-decoration: none " name = "18" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#18 " target = "iframe_2" >        delete [] t1;
+</a>        
+<a style = " color: LightCoral ; font-weight: bold; font-size: 13px;text-decoration: none " name = "18" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#18 " target = "iframe_2" >    }
+</a><a style = " color: LightCoral ; font-weight: bold; font-size: 13px;text-decoration: none " name = "18" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#18 " target = "iframe_2" >  void Rev(node *temp)
+</a>
+<a style = " color: LightCoral ; font-weight: bold; font-size: 13px;text-decoration: none " name = "18" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#18 " target = "iframe_2" >    {
+</a>        
+<a style = " color: CornflowerBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "49" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#49 " target = "iframe_2" >        if(temp == NULL)
+</a>            return ;
+        
+<a style = " color: Maroon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "65" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#65 " target = "iframe_2" >      Rev(temp-&gt;next);
+</a><a style = " color: LightSeaGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "62" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#62 " target = "iframe_2" >        cout&lt;&lt;temp-&gt;data&lt;&lt;" ";
+</a><a style = " color: salmon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "77" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#77 " target = "iframe_2" >    }
+</a><a style = " color: MediumAquamarine ; font-weight: bold; font-size: 13px;text-decoration: none " name = "24" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#24 " target = "iframe_2" >    void print()
+</a><a style = " color: MediumAquamarine ; font-weight: bold; font-size: 13px;text-decoration: none " name = "24" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#24 " target = "iframe_2" >    {
+</a><a style = " color: MediumAquamarine ; font-weight: bold; font-size: 13px;text-decoration: none " name = "24" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#24 " target = "iframe_2" >        node *trav;
+</a><a style = " color: MediumAquamarine ; font-weight: bold; font-size: 13px;text-decoration: none " name = "24" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#24 " target = "iframe_2" >        trav = head;
+</a><a style = " color: YellowGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "76" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#76 " target = "iframe_2" >        while(trav != NULL)
+</a><a style = " color: YellowGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "76" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#76 " target = "iframe_2" >            {
+</a><a style = " color: DarkTurquoise; font-weight: bold; font-size: 13px;text-decoration: none " name = "41" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#41 " target = "iframe_2" >                cout&lt;&lt;trav-&gt;data&lt;&lt;" ";
+</a><a style = " color: Maroon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "23" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#23 " target = "iframe_2" >                trav = trav -&gt; next;
+</a><a style = " color: Maroon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "23" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#23 " target = "iframe_2" >            }
+</a><a style = " color: Maroon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "23" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#23 " target = "iframe_2" >        cout&lt;&lt;endl;
+</a><a style = " color: Maroon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "23" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#23 " target = "iframe_2" >    }
+</a><a style = " color: Maroon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "23" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#23 " target = "iframe_2" >void delafter(int after)
+</a><a style = " color: purple ; font-weight: bold; font-size: 13px;text-decoration: none " name = "73" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#73 " target = "iframe_2" >    {
+</a><a style = " color: Firebrick ; font-weight: bold; font-size: 13px;text-decoration: none " name = "57" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#57 " target = "iframe_2" >        node * temp;
+</a><a style = " color: Firebrick ; font-weight: bold; font-size: 13px;text-decoration: none " name = "57" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#57 " target = "iframe_2" >        node *t2;
+</a><a style = " color: DeepPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "55" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#55 " target = "iframe_2" >        temp = head;
+</a><a style = " color: DeepPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "55" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#55 " target = "iframe_2" >        t2 = NULL;
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "46" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#46 " target = "iframe_2" >        while ( (temp != NULL) && (temp-&gt;data != after) )
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "46" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#46 " target = "iframe_2" >        {
+</a><a style = " color: peru ; font-weight: bold; font-size: 13px;text-decoration: none " name = "46" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#46 " target = "iframe_2" >            temp = temp-&gt;next;
+</a><a style = " color: LightPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "82" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#82 " target = "iframe_2" >        }
+</a><a style = " color: LightPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "82" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#82 " target = "iframe_2" >        if (temp == NULL)
+</a>        {
+            t2 == NULL;
+        }
+<a style = " color: OrangeRed ; font-weight: bold; font-size: 13px;text-decoration: none " name = "69" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#69 " target = "iframe_2" >       else if(temp-&gt;next == NULL)
+</a>        {
+<a style = " color: YellowGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "34" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#34 " target = "iframe_2" >            return;
+</a><a style = " color: YellowGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "34" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#34 " target = "iframe_2" >        }
+</a><a style = " color: YellowGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "34" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#34 " target = "iframe_2" >        else
+</a><a style = " color: YellowGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "34" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#34 " target = "iframe_2" >        {
+</a><a style = " color: YellowGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "34" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#34 " target = "iframe_2" >            t2 = temp-&gt;next;
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "87" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#87 " target = "iframe_2" >             temp-&gt;next =  t2-&gt;next;    
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "87" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#87 " target = "iframe_2" >             t2 -&gt;next =NULL;
+</a>            //t3 = NULL;
+<a style = " color: DeepPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "13" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#13 " target = "iframe_2" >            delete [] t2;
+</a>
+<a style = " color: DeepPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "13" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#13 " target = "iframe_2" >        }
+</a>
+
+<a style = " color: DeepPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "13" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#13 " target = "iframe_2" >    }
+</a><a style = " color: DeepPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "13" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#13 " target = "iframe_2" >void delbefore(int before)
+</a><a style = " color: DeepPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "13" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#13 " target = "iframe_2" >     {
+</a><a style = " color: DeepPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "13" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#13 " target = "iframe_2" >         node * t1;
+</a>         node * t2;
+        node *t3;
+<a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "85" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#85 " target = "iframe_2" >        t1 = head;
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "85" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#85 " target = "iframe_2" >        t2 = head;
+</a><a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "50" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#50 " target = "iframe_2" >        t3 = head;
+</a><a style = " color: DarkGoldenrod; font-weight: bold; font-size: 13px;text-decoration: none " name = "50" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#50 " target = "iframe_2" >    while( (t1 != NULL) && (t1-&gt;data != before) )
+</a><a style = " color: MediumAquamarine ; font-weight: bold; font-size: 13px;text-decoration: none " name = "66" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#66 " target = "iframe_2" >        {
+</a><a style = " color: MediumAquamarine ; font-weight: bold; font-size: 13px;text-decoration: none " name = "66" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#66 " target = "iframe_2" >            t3 = t2;
+</a><a style = " color: CadetBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "47" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#47 " target = "iframe_2" >            t2 = t1;
+</a><a style = " color: RoyalBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "32" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#32 " target = "iframe_2" >            t1 = t1-&gt;next;
+</a><a style = " color: RoyalBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "32" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#32 " target = "iframe_2" >        }
+</a><a style = " color: RoyalBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "32" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#32 " target = "iframe_2" >    if (t1 == NULL)
+</a><a style = " color: RoyalBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "32" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#32 " target = "iframe_2" >        {
+</a><a style = " color: DarkTurquoise; font-weight: bold; font-size: 13px;text-decoration: none " name = "83" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#83 " target = "iframe_2" >            t3 = NULL;
+</a><a style = " color: LightSalmon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "19" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#19 " target = "iframe_2" >            t2 = NULL;
+</a><a style = " color: LightSalmon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "19" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#19 " target = "iframe_2" >        }
+</a><a style = " color: LightSalmon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "19" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#19 " target = "iframe_2" >      if (t1 == head)
+</a><a style = " color: LightSalmon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "19" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#19 " target = "iframe_2" >        {
+</a><a style = " color: LightSalmon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "19" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#19 " target = "iframe_2" >            t3 = NULL;
+</a>            t2 = NULL;
+        }
+<a style = " color: Orchid ; font-weight: bold; font-size: 13px;text-decoration: none " name = "28" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#28 " target = "iframe_2" >     else if(t2 == head && t3 == head)
+</a><a style = " color: Orchid ; font-weight: bold; font-size: 13px;text-decoration: none " name = "28" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#28 " target = "iframe_2" >        {
+</a><a style = " color: Orchid ; font-weight: bold; font-size: 13px;text-decoration: none " name = "28" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#28 " target = "iframe_2" >           this-&gt; head = t1;
+</a><a style = " color: LightSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "81" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#81 " target = "iframe_2" >            t2-&gt;next = NULL;
+</a><a style = " color: ForestGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "80" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#80 " target = "iframe_2" >             t3 = NULL;
+</a><a style = " color: LimeGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "63" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#63 " target = "iframe_2" >            t2 = NULL;
+</a><a style = " color: LimeGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "63" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#63 " target = "iframe_2" >        }
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "43" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#43 " target = "iframe_2" >     else if (t1 != NULL)
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "43" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#43 " target = "iframe_2" >        {
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "43" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#43 " target = "iframe_2" >            t3-&gt;next = t1;
+</a><a style = " color: LightCoral ; font-weight: bold; font-size: 13px;text-decoration: none " name = "60" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#60 " target = "iframe_2" >            t2-&gt;next = NULL;
+</a><a style = " color: LightCoral ; font-weight: bold; font-size: 13px;text-decoration: none " name = "60" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#60 " target = "iframe_2" >             t3 = NULL;
+</a><a style = " color: HotPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "58" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#58 " target = "iframe_2" >            t2 = NULL;
+</a><a style = " color: HotPink ; font-weight: bold; font-size: 13px;text-decoration: none " name = "58" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#58 " target = "iframe_2" >        }
+</a>    
+
+<a style = " color: CadetBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "5" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#5 " target = "iframe_2" >    }
+</a>
+<a style = " color: CadetBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "5" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#5 " target = "iframe_2" >    void fancy()
+</a><a style = " color: CadetBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "5" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#5 " target = "iframe_2" >    {
+</a><a style = " color: CadetBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "5" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#5 " target = "iframe_2" >        node*temp = head;
+</a><a style = " color: CadetBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "5" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#5 " target = "iframe_2" >        while(temp != NULL)
+</a><a style = " color: CadetBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "5" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#5 " target = "iframe_2" >        {
+</a><a style = " color: DeepSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "56" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#56 " target = "iframe_2" >            if (temp-&gt;next != NULL)
+</a><a style = " color: DeepSkyBlue ; font-weight: bold; font-size: 13px;text-decoration: none " name = "56" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#56 " target = "iframe_2" >            {
+</a><a style = " color: ForestGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "38" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#38 " target = "iframe_2" >                cout&lt;&lt;temp-&gt;data&lt;&lt;"-&gt;";
+</a><a style = " color: ForestGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "38" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#38 " target = "iframe_2" >                temp = temp-&gt;next;    
+</a>            }
+<a style = " color: Orange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "26" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#26 " target = "iframe_2" >        else if (temp-&gt;next == NULL)
+</a><a style = " color: Orange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "26" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#26 " target = "iframe_2" >            {
+</a><a style = " color: Orange ; font-weight: bold; font-size: 13px;text-decoration: none " name = "26" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#26 " target = "iframe_2" >                 cout&lt;&lt;temp-&gt;data&lt;&lt;endl;
+</a><a style = " color: chartreuse; font-weight: bold; font-size: 13px;text-decoration: none " name = "48" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#48 " target = "iframe_2" >                  temp = temp-&gt;next;   
+</a>            }
+        }
+
+<a style = " color: RosyBrown ; font-weight: bold; font-size: 13px;text-decoration: none " name = "36" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#36 " target = "iframe_2" >    }
+</a><a style = " color: RosyBrown ; font-weight: bold; font-size: 13px;text-decoration: none " name = "36" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#36 " target = "iframe_2" >};
+</a>
+<a style = " color: RosyBrown ; font-weight: bold; font-size: 13px;text-decoration: none " name = "36" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#36 " target = "iframe_2" >int main()
+</a><a style = " color: RosyBrown ; font-weight: bold; font-size: 13px;text-decoration: none " name = "36" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#36 " target = "iframe_2" >{
+</a>    linklist l1;
+    int data1;
+  
+<a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "10" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#10 " target = "iframe_2" >    string s;
+</a><a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "10" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#10 " target = "iframe_2" >    while (1)
+</a><a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "10" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#10 " target = "iframe_2" >    {
+</a><a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "10" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#10 " target = "iframe_2" >        cin&gt;&gt;s;
+</a><a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "10" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#10 " target = "iframe_2" >        if (s=="AB")
+</a><a style = " color: Gold; font-weight: bold; font-size: 13px;text-decoration: none " name = "10" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#10 " target = "iframe_2" >         {
+</a><a style = " color: CornflowerBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "7" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#7 " target = "iframe_2" >             cin&gt;&gt;data1;
+</a><a style = " color: CornflowerBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "7" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#7 " target = "iframe_2" >             l1.AddFirst(data1);
+</a><a style = " color: CornflowerBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "7" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#7 " target = "iframe_2" >         }
+</a><a style = " color: CornflowerBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "7" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#7 " target = "iframe_2" >          if (s=="AE")
+</a><a style = " color: CornflowerBlue; font-weight: bold; font-size: 13px;text-decoration: none " name = "7" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#7 " target = "iframe_2" >         {
+</a><a style = " color: salmon ; font-weight: bold; font-size: 13px;text-decoration: none " name = "35" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#35 " target = "iframe_2" >             cin&gt;&gt;data1;
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "3" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#3 " target = "iframe_2" >             l1.AddLast(data1);
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "3" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#3 " target = "iframe_2" >         }
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "3" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#3 " target = "iframe_2" >          if (s=="PR")
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "3" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#3 " target = "iframe_2" >         {
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "3" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#3 " target = "iframe_2" >             l1.print();
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "3" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#3 " target = "iframe_2" >         }
+</a>         
+<a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "3" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#3 " target = "iframe_2" >        if(s=="EXIT")
+</a><a style = " color: cyan; font-weight: bold; font-size: 13px;text-decoration: none " name = "3" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#3 " target = "iframe_2" >         {
+</a><a style = " color: Magenta ; font-weight: bold; font-size: 13px;text-decoration: none " name = "22" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#22 " target = "iframe_2" >             break;
+</a><a style = " color: Magenta ; font-weight: bold; font-size: 13px;text-decoration: none " name = "22" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#22 " target = "iframe_2" >         }
+</a><a style = " color: Magenta ; font-weight: bold; font-size: 13px;text-decoration: none " name = "22" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#22 " target = "iframe_2" >         if(s=="AMA")
+</a><a style = " color: Magenta ; font-weight: bold; font-size: 13px;text-decoration: none " name = "22" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#22 " target = "iframe_2" >         {
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "2" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#2 " target = "iframe_2" >               int d;
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "2" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#2 " target = "iframe_2" >             cin&gt;&gt;d;
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "2" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#2 " target = "iframe_2" >             cin&gt;&gt;data1;
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "2" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#2 " target = "iframe_2" >             l1.AddNodeAfter(d,data1);
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "2" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#2 " target = "iframe_2" >         }
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "2" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#2 " target = "iframe_2" >          if(s=="AMB")
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "2" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#2 " target = "iframe_2" >         {
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >               int d;
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >             cin&gt;&gt;d;
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >             cin&gt;&gt;data1;
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >             l1.AddNodeBefore(d,data1);
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >         }
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >         if (s=="DN")
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >         {
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >             int d;
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >             cin&gt;&gt;d;
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >             l1.DelNode(d);
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >         }
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >        if(s=="RPR")
+</a><a style = " color: Red ; font-weight: bold; font-size: 13px;text-decoration: none " name = "0" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#0 " target = "iframe_2" >        {
+</a>            
+<a style = " color: LightSeaGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "20" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#20 " target = "iframe_2" >             l1.Rev(l1.gethead());
+</a><a style = " color: LightSeaGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "20" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#20 " target = "iframe_2" >        }
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "44" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#44 " target = "iframe_2" >         if(s=="FPR")
+</a><a style = " color: Blue; font-weight: bold; font-size: 13px;text-decoration: none " name = "44" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#44 " target = "iframe_2" >        {
+</a>            
+<a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >             l1.fancy();
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >        }
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >        if(s=="DNA")
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >        {
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >            int after;
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >            cin&gt;&gt;after;
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >            l1.delafter(after);
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >        }
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >        if(s=="DNB")
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >        {
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >            int af;
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >            cin&gt;&gt;af;
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >            l1.delbefore(af);
+</a><a style = " color: Green; font-weight: bold; font-size: 13px;text-decoration: none " name = "1" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#1 " target = "iframe_2" >        }
+</a>        
+        
+    }
+<a style = " color: PaleGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "71" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#71 " target = "iframe_2" >    return 0;
+</a><a style = " color: PaleGreen ; font-weight: bold; font-size: 13px;text-decoration: none " name = "71" href = E:/Plagirism_Project/MODULAR_CODE/Result/match98-1.html#71 " target = "iframe_2" >}
+</a></pre></body></html>
