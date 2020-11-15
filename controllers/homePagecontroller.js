@@ -3,9 +3,14 @@
 
 
 module.exports.homePage=function (req, res) {
-	console.log(req.sessionID);
+	console.log(req.session.user);
 	console.log();
-
-	res.render('home_page.ejs',{username:req.session.user});
+	var flag = false; 
+	if(req.session.user!= null){
+		flag=true;
+	}
+	console.log(flag);
+	
+	res.render('homePage.ejs',{session:flag,username:req.session.user});
 //	res.sendFile(__dirname + '/public' + '/index.html');
 }

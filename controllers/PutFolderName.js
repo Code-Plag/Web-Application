@@ -21,22 +21,26 @@ module.exports.CompFolder = (req, res) => {
 
 	const Connection = mysql.createConnection(config);
 	email = req.session.email;
+		console.log(email);
 	const data = {
 		email: email,
-		folderName: req.body.CompareFolder,
+		folderName: req.session.foldername,
 		fileCount: req.session.fileCount,
 		MatchedDataJson: JSON.stringify(require(req.session.JsonResult + file1)),
 		fileDataJson: JSON.stringify(require(req.session.JsonResult + file2)),
 		ComparisonDate: date,
 	};
+	
 
 	Connection.query(
 		'INSERT INTO ComparisonHistory SET ?',
 		data,
 		(err, results) => {
 			if (err) {
+				console.log(err);
 				reject(err);
 			}
+			console.log('inserted')
 			console.log(results)
 			resolve(results)
 		},

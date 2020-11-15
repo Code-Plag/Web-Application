@@ -1,6 +1,8 @@
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
+const session_check_controller = require('./session_check_controller.js');
+
 
 var jwt = require('jsonwebtoken');
 
@@ -20,7 +22,23 @@ module.exports.createtempdir = function (req, res) {
 			} else if (err instanceof multer.MulterError) {
 				return res.send(err);
 			} else {
-				res.sendFile(path.join(__dirname, '/..', '/public', '/response.html'));
+				//res.sendFile(path.join(__dirname, '/..', '/public', '/response.html'));
+				var details={
+					foldername:req.body.foldername,
+					language:req.body.language,
+					no_of_files : fileCount
+				}
+				req.session.foldername = req.body.foldername;
+				console.log(req.session.foldername);
+				if(session_check_controller.check_session(req,res)){
+					console.log("inside checker")
+					res.render('check_plagiarism.ejs',{session:session_check_controller.check_session(req,res),username:req.session.user,details:details})
+				}
+				else{
+					console.log("outiside checker")
+					res.render('homePage.ejs',{session:session_check_controller.check_session(req,res),username:req.session.user});
+				}
+				
 			}
 		});
 	} catch (error) {

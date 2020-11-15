@@ -28,6 +28,7 @@ module.exports.CreateUserDirectory = function (req, res) {
         console.error(err);
     }
     req.session.folderpath = userFolder;
-    console.log(req.session.folderpath);
+    console.log(req.session.folderpath,"folder path");
+
     return userFolder;
 };
