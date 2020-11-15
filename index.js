@@ -3,6 +3,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+
 var cors = require('cors');
 const path = require('path');
 var bodyParser = require('body-parser');
@@ -35,6 +36,7 @@ const forgetPasswordRouter = require('./routes/forgetPasswordRoute');
 MIDDLEWARE STACK
 
 */
+app.set('view engine', 'ejs');
 app.use(cors());
 passport.use(new LocalStrategy({ usernameField: 'email' }, LocalStrategyCallback));
 
@@ -111,3 +113,12 @@ function isLoggedIn(req, res, next) {
         res.redirect('/signup');
     }
 }
+app.get('/123', (req, res)=>{ 
+  
+    // The render method takes the name of the HTML 
+    // page to be rendered as input 
+    // This page should be in the views folder 
+    // in the root directory. 
+    res.render('home.ejs'); 
+      
+    }); 

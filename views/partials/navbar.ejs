@@ -31,8 +31,13 @@ style="background-color: whitesmoke"
     <li class="nav-item ml-4">
       <a class="nav-link" href="#"><b> Contact-us </b></a>
     </li>
-    <li class="nav-item ml-4">
-        <a class="nav-link" href="#"><b> <%=username%></b></a>
+    <li class="nav-item ml-4 dropdown">
+        <a class="nav-link  dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><b> <%=username%></b></a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/api/v1/logout">Logout</a>
+            <a class="dropdown-item" href="#">Past Comparisons</a>
+            <a class="dropdown-item" href="#">Profile</a>
+          </div>
       </li>
   </ul>
 </div>

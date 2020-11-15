@@ -31,7 +31,7 @@ module.exports.authenticate1 = function (email, password) {
 						} else if (result == true && results[0].activestatus == true) {
 							console.log('result is sucessfully fetched');
 							resolve(results[0]);
-							//req.session.email = req.body.email;
+							//req.session.user = req.body.email;
 						} else if (result == true && results[0].activestatus == false) {
 							console.log('result is not sucessfully fetched');
 							reject('result is not sucessfully fetched');

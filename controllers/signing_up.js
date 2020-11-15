@@ -10,7 +10,7 @@ module.exports.singing_up = function (req, res) {
     let activeExpires = Date.now() + 1 * 3600 * 1000;
 
     let mailOption = {
-        from: 'kuldeepchoudharyc322@gmail.com', // sender address
+        from: 'laxnp9@gmail.com', // sender address
         to: mailid, // list of receivers
         subject: 'Please confirm your Email account', // Subject line
         html:

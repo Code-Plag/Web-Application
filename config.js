@@ -2,7 +2,7 @@
 config={
     host:'localhost',
     user:'root',
-    password:'Halamadrid@4',
+    password:'Laxman@1594',
     database:'codeplag'
 }
 

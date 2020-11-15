@@ -5,10 +5,18 @@ exports.logoutpage = function (req, res) {
 };
 
 exports.logout = function (req, res) {
-    if (req.user == '') {
-        res.redirect('/login');
-    }
-    console.log(req.user);
-    req.logout();
-    console.log(req.user);
+    // if (req.session.user == '') {
+        
+    //     res.redirect('/api/v1/login');
+    // }
+    // console.log(req.user);
+    // req.session.destroy(function(err) {
+    //     console.log("user logged out")
+    //   });
+    // req.logout();
+    req.session.destroy(function(err) {
+            console.log("user logged out")
+          });
+          res.redirect('/api/v1/login');
+    
 };
