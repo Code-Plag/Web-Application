@@ -5,7 +5,6 @@ router = express.Router();
 
 router
     .route('/')
-    .get(logoutController.logoutpage)
-    .post(logoutController.logout);
+    .get(logoutController.logoutpage);
 
 module.exports = router;

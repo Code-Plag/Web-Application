@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Results</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/0ff6456f25.js" crossorigin="anonymous"></script>
+
+
+<style>
+pre,
+code {
+  font-family: monospace, monospace;
+  background: white;
+  border-width: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+pre {
+}
+pre > code {
+  display: block;
+  word-wrap: normal;
+}
+
+#code_1_div {
+  height: 400px;
+  overflow: auto;
+}
+#code_2_div {
+  height: 400px;
+  overflow: auto;
+}
+
+/*line no wrapper*/
+.line-numbers-wrapper {
+  position: relative;
+  padding-left: 0;
+}
+.line-numbers-wrapper,
+code {
+  color: #bbb;
+}
+
+.line-numbers-code {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  position: absolute;
+  top: 0px;
+  left: 6rem;
+  z-index: 1;
+
+  border: none;
+}
+</style>
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+<!-- for use-->
+<div hidden id ="file" >
+    <%=results[0].fileDataJson %>
+</div>
+<div hidden  id="match">
+    <%=results[0].MatchedDataJson %>
+</div>
+
+  <!-- navbar-->
+  
+  <%- include('partials/navbar') %>
+  <!-- main component-->
+  <div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+    <div class="col-md-12  ">
+      <div class="row justify-content-center">  
+        <div class="col-md-4 text-center p-0">
+          <div class="form-group p-0">
+            <h2 class="text-center display-4"><i class="fa fa-code" aria-hidden="true"></i> Results</h2>
+          </div>
+         </div>
+       </div>
+
+       <div class="row justify-content-center"> 
+         <div class="col-md-6 d-flex justify-content-center align-items-center">
+       <div class="table-responsive" >
+        <table class="table table-hover table-bordered text-center" >
+        <tr>
+          <th class="bg-info">Folder Name:</th>
+          <td> <%= results[0].folderName%></td>
+        </tr>
+        <tr>
+          <th class="bg-info">Submission Date and Time:</th>
+          <td><%= results[0].ComparisonDate%></td>
+        </tr>
+        <tr>
+          <th class="bg-info">Status:</th>
+          <td><%= results[0].status%></td>
+        </tr>
+       
+      </table>
+       </div>
+      
+       </div>
+       <div class="col-md-6 ">
+      <div class="row justify-content-around  my-4">
+       <div class="col-md-4 shadow-sm text-center p-3">
+        <h6 class="text-center">Total Files</h6>
+        <h1 class="text-center text-danger"><%= results[0].fileCount%></h1>
+
+         </div>
+        <div class="col-md-4 shadow-sm text-center   p-3">
+          <h6 class="text-center">Total Matches</h6>
+          <h1 class="text-center text-success"><%= JSON.parse(results[0].MatchedDataJson).length%></h1>
+        </div>
+        </div> 
+        <div class="row justify-content-around my-4">
+         
+           <div class="col-md-4 shadow-sm  p-3 text-center">
+            <h6 class="text-center">Lines of Code</h6>
+            <h1 class="text-center text-warning"></h1>
+           </div>
+           </div>      
+  </div>
+       </div>
+       <hr>
+      <!--Search box-->
+     <div class="row p-2">
+      <div class="col-md-4">
+        <h2 class="text-info text-center display-4"><i class="fa fa-search" aria-hidden="true"></i></h2>
+    <h3 class="text-info text-center ">Explore Matches</h3>
+      </div> 
+      <div class="col-md-4 text-center">
+        <div class="form-group p-2">
+          <p class="text-center text-info">Enter file name to view details.</p>
+          <input class="form-control " id="myInput" type="text" placeholder="Search">
+        </div>
+       </div>
+       <div class="col-md-4">
+        <h2 class="text-info text-center display-4"><i class="fa fa-users" aria-hidden="true"></i></h2>
+    <h3 class="text-info text-center ">Peer Comparison</h3>
+      </div>
+     </div>
+     <div class="table-responsive" >
+      <table class="table  table-bordered table-hover text-center" id="ResultTable">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Sr No.</th>
+            <th scope="col">File Name 1</th>
+            <th scope="col">File Name 2</th>
+            <th scope="col">Match Percent</th>
+            <th scope="col">Result</th>
+          </tr>
+        </thead>
+        <tbody id="ResultTableBody">
+          <tr></tr>
+        </tbody>
+      </table>
+   
+    </div>
+    
+    
+    
+    <!-- <div class="table-responsive" id="myTable"> -->
+     </div>
+    </div>  
+    </div>
+  
+   <!-- The Modal -->
+ <div class="modal fade" id="myModal"  role="dialog">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header ">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col">
+              <h4 class="text-center" id="modal-title"></h4>
+
+            </div>
+          </div>
+        </div>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body container-fluid">
+        <h5 class="text-center text-secondary">Click on colored code snippets to compare. 
+          Same colored codes have possible similarities.</h5>
+        <div class="row content" id="code_modal">
+          <div class=" col-sm-6 container">
+           
+            <div id="name_1" style="text-align: center"></div>
+            <div id="code_1_div"></div>
+          
+          </div>
+          
+          <div class=" col-sm-6 container">
+           
+            <div id="name_2" style="text-align: center"></div>
+            <div id="code_2_div"></div>
+          
+          </div>
+        </div>      
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div> 
+    </div>
+  </div>
+</div>
+    <!-- The footer -->
+        <%- include('partials/footer') %>
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+    <!-- -->
+    <script >
+    
+    let file1 = document.getElementById('file').innerHTML;
+      
+        let file = JSON.parse(file1);
+        
+    let match1 = document.getElementById('match').innerHTML;
+    let match = JSON.parse(match1);
+    
+     
+     var colorVector = [
+       "Red",
+       "Green",
+       "Blue",
+       "cyan",
+       "peru ",
+       "CadetBlue",
+       "chartreuse",
+       "CornflowerBlue",
+       "DarkGoldenrod",
+       "brown",
+       "Gold",
+       "DarkOrange ",
+       "DarkViolet ",
+       "DeepPink ",
+       "DeepSkyBlue ",
+       "Firebrick ",
+       "LawnGreen ",
+       "LightCoral ",
+       "LightSalmon ",
+       "LightSeaGreen ",
+       "LimeGreen ",
+       "Magenta ",
+       "Maroon ",
+       "MediumAquamarine ",
+       "MediumBlue ",
+       "Orange ",
+       "OrangeRed ",
+       "Orchid ",
+       "HotPink ",
+       "PaleGreen ",
+       "PaleVioletRed ",
+       "purple ",
+       "RoyalBlue ",
+       "SeaGreen ",
+       "YellowGreen ",
+       "salmon ",
+       "RosyBrown ",
+       "PaleTurquoise ",
+       "ForestGreen ",
+       "LightSkyBlue ",
+       "LightPink ",
+       "DarkTurquoise"
+         ];
+     
+    
+         for(let i = 0; i < match.length; i++) {
+  
+          let percent = match[i]["file_1"]["percent"];
+          if(percent < match[i]["file_2"]["percent"]) percent = match[i]["file_2"]["percent"];
+          percent = percent.toFixed(2);
+  
+  
+          let btn = "<button type=\"button\" class=\"btn btn-info  btn-sm\"" + "id = \"btn" + i + "\"" + "onclick = \" createModal(" + i + ")\"" + "data-toggle=\"modal\" data-target=\"#myModal\">View Result</button>";
+  
+         let table = document.getElementById("ResultTable");
+         let row = table.insertRow(i+1);
+         let cell1 = row.insertCell(0);
+         let cell2 = row.insertCell(1);
+         let cell3 = row.insertCell(2);
+         let cell4 = row.insertCell(3);
+         let cell5 = row.insertCell(4);
+  
+         cell1.innerHTML = i+1;
+         cell2.innerHTML = file[match[i]["file_1"]["index"]]["name"];
+         cell3.innerHTML = file[match[i]["file_2"]["index"]]["name"];
+         cell4.innerHTML = percent + " %" ;
+         cell5.innerHTML = btn;
+  
+         }
+    
+    
+   
+     function createModal(i) {
+       let percentTemp = match[i]["file_1"]["percent"];
+       if(percentTemp < match[i]["file_2"]["percent"]) percentTemp = match[i]["file_2"]["percent"];
+       percentTemp = percentTemp.toFixed(2);
+       document.getElementById("modal-title").innerHTML = "<b>Match Percentage: " + percentTemp + " % </b>";
+       let name1 = file[match[i]["file_1"]["index"]]["name"];
+       let name2 = file[match[i]["file_2"]["index"]]["name"];
+       document.getElementById("name_1").innerHTML = "<h4><b><u>" + name1 + "</u></b></h4>";
+       document.getElementById("name_2").innerHTML = "<h4><b><u>" + name2 + "</u></b></h4>";
+       let temp1 = file[match[i]["file_1"]["index"]]["code"];
+       let temp2 = file[match[i]["file_2"]["index"]]["code"];
+       temp1 = temp1.replace(/&/g, "&amp;");
+       temp1 = temp1.replace(/</g, "&lt;");
+       temp1 = temp1.replace(/>/g, "&gt;");
+       temp2 = temp2.replace(/&/g, "&amp;");
+       temp2 = temp2.replace(/</g, "&lt;");
+       temp2 = temp2.replace(/>/g, "&gt;");
+       let code_1_arr = temp1.split("\n");
+       let code_2_arr = temp2.split("\n");
+       let file_1_map = match[i]["file_1"]["line_match_map"];
+       let file_2_map = match[i]["file_2"]["line_match_map"];
+       let code_1_div_dis = "<pre><code>";
+       let code_2_div_dis = "<pre><code>";
+       var linecnt1 = 1;
+       for(index1 in code_1_arr) { 
+        code_1_div_dis += "<span class=\"text-bold text-info\">" + linecnt1 + "  </span>";
+        if(linecnt1 in file_1_map)
+         {
+  
+          code_1_div_dis += "<a  style = \" color:" + colorVector[file_1_map[linecnt1] % colorVector.length]   + "; font-weight: bold; font-size: 13px; text-decoration: none \" id = \"" + file_1_map[linecnt1]  + "file_1\" href =\"#" + file_1_map[linecnt1] + "file_2\">" +  code_1_arr[index1]+  "</a>";
+                                        
+          code_1_div_dis += "\n";
+   
+                    
+         }
+         else
+         {
+             code_1_div_dis += code_1_arr[index1] + "\n";
+         } 
+         linecnt1++;
+       }
+       
+       var linecnt2 = 1;
+       for(index2 in code_2_arr) {
+        code_2_div_dis += "<span class=\"text-bold text-info\">" + linecnt2 + "  </span>";
+           if(linecnt2 in file_2_map)
+         {
+             code_2_div_dis += "<a  style = \" color:" + colorVector[file_2_map[linecnt2] % colorVector.length]   + "; font-weight: bold; font-size: 13px; text-decoration: none \" id = \"" + file_2_map[linecnt2] + "file_2\" href =\"#" + file_2_map[linecnt2] + "file_1\">" +  code_2_arr[index2] +  "</a>";
+            code_2_div_dis += "\n";                         
+         }
+         else
+         {
+             code_2_div_dis += code_2_arr[index2] + "\n";
+         }
+           linecnt2++;
+       }
+       code_1_div_dis += "</code></pre>";
+       code_2_div_dis += "</code></pre>";
+       document.getElementById("code_1_div").innerHTML = code_1_div_dis;
+       document.getElementById("code_2_div").innerHTML = code_2_div_dis;
+     };
+   
+  
+   // Search Box Code  
+   $(document).ready(function() {
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#ResultTableBody tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+
+
+    </script>
+
+</body>
+
+</html>

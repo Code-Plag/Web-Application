@@ -28,6 +28,9 @@ module.exports.createtempdir = function (req, res) {
 					language:req.body.language,
 					no_of_files : fileCount
 				}
+				req.session.language=req.body.language;
+				req.session.uploadDetails= details;
+				req.session.ComparisonDate=req.body.ComparisonDate;
 				req.session.foldername = req.body.foldername;
 				console.log(req.session.foldername);
 				if(session_check_controller.check_session(req,res)){
@@ -66,4 +69,4 @@ var storage = multer.diskStorage({
 var upload = multer({
 	storage: storage,
 	limits: { fileSize: 2 * 1024 * 1024, files: 100, fields: 100 },
-}).array('multiple_files', 10);
+}).array('multiple_files', 100);

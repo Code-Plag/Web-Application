@@ -1,8 +1,10 @@
 const tempDirectory = require('./tempDirectory.js');
+const userDirectory = require('./userDirectory.js');
 const session_check_controller = require('./session_check_controller.js');
 module.exports.fileUpload = function (req, res) {
+    userDirectory.CreateUserDirectory(req, res);
     tempDirectory.createtempdir(req, res);
-
+    
     const current = req.session.dir;
     req.session.executepath = current;
 };

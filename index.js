@@ -31,6 +31,8 @@ const showResultRouter = require('./routes/showResultRoute');
 const paymentRouter = require('./routes/paymentRoute');
 const logoutRouter = require('./routes/logoutRoute');
 const forgetPasswordRouter = require('./routes/forgetPasswordRoute');
+const checkFolderRouter = require('./routes/checkFolderRoute');
+const ShowComparisonRouter = require('./routes/ShowComparisonRoute');
 
 /*                                                                              
 MIDDLEWARE STACK
@@ -81,9 +83,9 @@ app.use(
         store: new FileStore(),
 
         secret: process.env.SECRET_KEY,
-        resave: false,
+        resave: true,
         saveUninitialized: true,
-        //cookie: { secure: true }
+      //  cookie: { secure: true }
     })
 );
 app.use(passport.initialize());
@@ -103,8 +105,10 @@ app.use('/api/v1/resetpassword', resetPasswordRouter);
 app.use('/api/v1/checkplag', checkPlagRouter);
 app.use('/api/v1/upload-multiple-files', uploadFilesRouter);
 app.use('/api/v1/showResult', showResultRouter);
+app.use('/api/v1/checkFolder', checkFolderRouter);
 app.use('/api/v1/payment', paymentRouter);
 app.use('/api/v1/logout', logoutRouter);
+app.use('/api/v1/showComparison', ShowComparisonRouter);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
@@ -113,12 +117,4 @@ function isLoggedIn(req, res, next) {
         res.redirect('/signup');
     }
 }
-app.get('/123', (req, res)=>{ 
-  
-    // The render method takes the name of the HTML 
-    // page to be rendered as input 
-    // This page should be in the views folder 
-    // in the root directory. 
-    res.render('home.ejs'); 
-      
-    }); 
+

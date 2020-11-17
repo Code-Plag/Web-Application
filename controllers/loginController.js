@@ -23,7 +23,7 @@ exports.userlogin = function (req, res) {
     req.session.user = req.body.email;
     passport.authenticate('local', (err, user, info) => {
         req.login(user, (err) => {
-            userDirectory.CreateUserDirectory(req, res);
+           // userDirectory.CreateUserDirectory(req, res);
 
             res.redirect('/api/v1');
         });
