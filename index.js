@@ -94,7 +94,7 @@ app.use(passport.session());
 passport.serializeUser(serializeUserCallback);
 
 passport.deserializeUser(deserializeUserCallback);
-
+app.use('/', homePageRouter);
 app.use('/api/v1', homePageRouter);
 app.use('/api/v1/signup', SignupRouter);
 app.use('/api/v1/verify', verifyemailRouter);

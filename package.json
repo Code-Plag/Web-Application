@@ -4,9 +4,9 @@
 	"description": "palagarism project",
 	"main": "index.js",
 	"scripts": {
+		"start": "node index.js --ignore sessions/ ",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev:server": "nodemon --ignore sessions/ index.js",
-		"heroku-postbuild": "npm run build"
+		"heroku-postbuild": "npm run build && npm start"
 	},
 	"author": "team work",
 	"license": "ISC",
