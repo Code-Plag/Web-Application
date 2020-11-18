@@ -53,8 +53,10 @@ passport.use(
     )
 );
 
-app.listen(process.env.port || 3000);
-console.log('Running at Port 3000');
+app.listen(process.env.PORT || 3000 , function(){
+    console.log(' server is Running at Port 3000');
+});
+
 
 //set() is used to store the variable name...//
 app.set('view engine', 'pug'); //view engine ==pug
