@@ -1,9 +1,9 @@
 
 config={
-    host:'us-cdbr-east-02.cleardb.com',
-    user:'bd11ff71ba00ac',
-    password:'a21553f2',
-    database:'heroku_c82a9c7311ea00b'
+    host:'code-plag.cyeitizrgvbl.us-east-1.rds.amazonaws.com',
+    user:'admin',
+    password:'codeplag',
+    database:'codeplag'
 }
 
 /* 
