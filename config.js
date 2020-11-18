@@ -1,9 +1,9 @@
 
 config={
-    host:'localhost',
-    user:'root',
-    password:'Laxman@1594',
-    database:'codeplag'
+    host:'us-cdbr-east-02.cleardb.com',
+    user:'bd11ff71ba00ac',
+    password:'a21553f2',
+    database:'heroku_c82a9c7311ea00b'
 }
 
 /* 
