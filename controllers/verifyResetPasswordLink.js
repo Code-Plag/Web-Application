@@ -29,6 +29,6 @@ module.exports.resetpasswordemailverify = function (req, res) {
         // TODO: Gracefully handle decoding issues.
         // Create form to reset password.
 
-        res.sendFile(path.resolve(__dirname + '/../public/Resetpassword.html'));
+        res.render('update_password.ejs');
     });
 };

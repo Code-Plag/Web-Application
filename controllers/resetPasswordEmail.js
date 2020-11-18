@@ -28,7 +28,7 @@ module.exports.passwordreset = function (req, res) {
             console.log(token);
             let link = 'http://' + req.get('host') + '/api/v1/resetpassword/' + payload.id + '/' + token;
             let mailOption = {
-                from: 'kuldeepchoudharyc322@gmail.com', // sender address
+                from: process.env.EMAIL, // sender address
                 to: emailAddress, // list of receivers
                 subject: 'password reset link', // Subject line
                 html:
@@ -42,7 +42,7 @@ module.exports.passwordreset = function (req, res) {
             resetpasswordmail()
                 .then((result) => {
                     console.log(result);
-                    res.sendFile(path.resolve(__dirname + '/../public/emailsent.html'));
+                    res.render('resetpassword.ejs');
                 })
                 .catch((err) => {
                     console.log(error);

@@ -2,7 +2,7 @@ const crypto = require('crypto');
 var register = require('./register');
 var sendMail = require('./sendmail.js');
 var path = require('path');
-
+var session_check_controller = require('./session_check_controller');
 module.exports.singing_up = function (req, res) {
     let activeToken = crypto.randomBytes(17).toString('hex');
     let mailid = req.body.email;
@@ -32,7 +32,7 @@ module.exports.singing_up = function (req, res) {
     Registerandsendmail()
         .then((result) => {
             console.log(result);
-            res.sendFile(path.resolve(__dirname + '/../public/reg.html'));
+            res.render('emailsent.ejs');
         })
         .catch((err) => {
             console.log(err);

@@ -40,7 +40,7 @@ if((req.protocol+"://"+req.get('host'))==("http://"+host))
                       if (err) throw err;
                       console.log(result.affectedRows + " record(s) updated");
 
-                      res.end("<h1>Email is been Successfully verified</h1>");
+                      res.render('verification_success.ejs');
                     });
                     
               }

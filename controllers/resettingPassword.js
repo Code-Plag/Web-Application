@@ -48,7 +48,7 @@ module.exports.setResetPassword = function (req, res) {
                     console.log(result);
 
                     let mailOption = {
-                        from: 'kuldeepchoudharyc322@gmail.com', // sender address
+                        from: process.env.EMAIL, // sender address
                         to: emailAddress, // list of receivers
                         subject: 'Password Reset Confirmation', // Subject line
                         html: 'Hello, <br> your password is sucessfully updated.',
@@ -67,7 +67,7 @@ module.exports.setResetPassword = function (req, res) {
                             throw err;
                         });
 
-                    return res.sendFile(path.resolve(__dirname + '/../public/changepassword.html'));
+                    return res.render('reset_password_success.ejs');
                 });
             });
         } else {
