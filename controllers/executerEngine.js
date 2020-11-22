@@ -14,59 +14,52 @@ var exec = require('child_process').execFile;
 function promiseFromChildProcess(child) {
     return new Promise(function (resolve, reject) {
         console.log('inside promise child process');
-        child.addListener("error", reject);
-        child.addListener("exit", resolve);
+        child.addListener('error', reject);
+        child.addListener('exit', resolve);
     });
 }
 
-exports.runPlagEngine = async  (req, res)=>{
+exports.runPlagEngine = async (req, res) => {
     console.log('fun() start');
     console.log(req.session.executepath);
     const arg1 = req.session.dir;
-    const arg2 = path.join(req.session.folderpath, 'Result');
+    const arg2 = path.join(req.session.dir, 'Result');
     var details = req.session.uploadDetails;
-    const arg3= req.session.language;
+    const arg3 = req.session.language;
 
     console.log(arg2);
     var start = Date.now();
     try {
-        var engine = './models/MODULAR_CODE/src/a.exe';//C:\Users\lenovo\Desktop\MODULAR_CODE\src
-        var data = await execPromise (engine, arg1, arg2,arg3);//
-        console.log(Date.now()-start,'hi',data);
+        var engine = './models/MODULAR_CODE/a.out'; //C:\Users\lenovo\Desktop\MODULAR_CODE\src
+        //insert query with without data
+        await PutFolderName.insert_folder(req, res);
+
+        var data = await execPromise(engine, arg1, arg2, arg3); //
+        console.log(Date.now() - start, 'hi', data);
         var JsonResult = path.join(arg2, '/');
         req.session.JsonResult = JsonResult;
-        var obj={};
-        var object=await CreateJsonPlag(JsonResult, obj);
-        console.log(Date.now()-start,'before put folder name');
-        await PutFolderName.CompFolder(req,res);// database entry
-        console.log(Date.now()-start,'after put folder name');
-        var results = await loadFunction.loader(req,res);//return data selected
-        if(fs.existsSync(arg1)){//
-            fs.rmdirSync(arg1, { recursive: true });
+        var obj = {};
+        var object = await CreateJsonPlag(JsonResult, obj);
+        console.log(Date.now() - start, 'before put folder name');
+        await PutFolderName.CompFolder(req, res); // database entry
+        console.log(Date.now() - start, 'after put folder name');
+        //var results = await loadFunction.loader(req, res); //return data selected
 
+        // removes the temp folder
+
+        if (fs.existsSync(arg1)) {
+            //
+            fs.rmdirSync(arg1, { recursive: true });
         }
+        res.redirect('/api/v1/dashboard');
         // if(fs.existsSync(JsonResult)){//
         //     fs.rmdirSync(JsonResult, { recursive: true });
 
         // }
-
-        if(session_check_controller.check_session(req,res)){
-            console.log("inside checker")
-            res.render('dashboard.ejs',{session:session_check_controller.check_session(req,res),
-                                        username:req.session.user,
-                                        results : results,
-                                        details : details});
-        }
-    else{
-        console.log("outiside checker")
-        res.render('homePage.ejs',{session:session_check_controller.check_session(req,res),username:req.session.user});
-    }
-    
     } catch (error) {
-
-        console.log(error)
+        console.log(error);
     }
-}
+};
 //     exec('./models/MODULAR_CODE/a.exe', [arg1, arg2], async function (err, data) {
 //         console.log(Date.now()-start,'after callback plag');
 //         console.log("outside");
@@ -78,54 +71,44 @@ exports.runPlagEngine = async  (req, res)=>{
 //         } else {
 //             console.log(data);
 //             console.log('reached upto this');
-            
+
 //             var obj = {};
 //             console.log(Date.now()-start,'before creatjson plag');
 
-
-           
 //             console.log(object,'affter creatjson plag');
 //             myobj = {};
 //             myobj.result = obj;
-        
-          
+
 //             console.log(Date.now()-start);
 //     //pushes json into database
 //            console.log('json pushed to database');
 //            console.log(Date.now()-start,'after database push plag');
 //            // timestamp folder deletion
-//             // 
-         
+//             //
+
 //           // console.log(results);
-           
+
 //            //fs.readdirSync(dir).forEach(function (file) {
 //           //  obj[file.replace(/\.json$/, '')] = require(dir + file);
-        
 
-        
 //     });
 // };
 function CreateJsonPlag(dir, obj) {
-    return new Promise ((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
         fs.readdirSync(dir).forEach(function (file) {
             obj[file.replace(/\.json$/, '')] = require(dir + file);
-         
         });
         resolve(obj);
-    }
-     );
-  
-    
+    });
 }
-function execPromise(command,arg1,arg2,arg3) {
-    
-    return new Promise(function(resolve, reject) {
-        exec(command,[arg1,arg2,arg3], (error, data) => {
+function execPromise(command, arg1, arg2, arg3) {
+    return new Promise(function (resolve, reject) {
+        exec(command, [arg1, arg2, arg3], (error, data) => {
             if (error) {
                 reject(error);
                 return;
             }
-            console.log("exec promise")
+            console.log('exec promise');
             console.log(data);
             resolve(data);
         });

@@ -33,6 +33,7 @@ const logoutRouter = require('./routes/logoutRoute');
 const forgetPasswordRouter = require('./routes/forgetPasswordRoute');
 const checkFolderRouter = require('./routes/checkFolderRoute');
 const ShowComparisonRouter = require('./routes/ShowComparisonRoute');
+const ShowDashBoard = require('./routes/dashboardRoute');
 
 /*                                                                              
 MIDDLEWARE STACK
@@ -53,10 +54,9 @@ passport.use(
     )
 );
 
-app.listen(process.env.PORT || 3000 , function(){
+app.listen(process.env.PORT || 3000, function () {
     console.log(' server is Running at Port 3000');
 });
-
 
 //set() is used to store the variable name...//
 app.set('view engine', 'pug'); //view engine ==pug
@@ -87,7 +87,7 @@ app.use(
         secret: process.env.SECRET_KEY,
         resave: true,
         saveUninitialized: true,
-      //  cookie: { secure: true }
+        //  cookie: { secure: true }
     })
 );
 app.use(passport.initialize());
@@ -111,6 +111,7 @@ app.use('/api/v1/checkFolder', checkFolderRouter);
 app.use('/api/v1/payment', paymentRouter);
 app.use('/api/v1/logout', logoutRouter);
 app.use('/api/v1/showComparison', ShowComparisonRouter);
+app.use('/api/v1/dashboard', ShowDashBoard);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
@@ -119,4 +120,3 @@ function isLoggedIn(req, res, next) {
         res.redirect('/signup');
     }
 }
-

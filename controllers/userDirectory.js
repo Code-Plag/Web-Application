@@ -10,25 +10,25 @@ module.exports.CreateUserDirectory = function (req, res) {
     req.session.email = email;
     var MYMAIL = email;
 
-    var result = 'Result';
-    const userFolder = path.resolve(`models`, `MODULAR_CODE`, `Testing`, `${email}`);
+    //  var result = 'Result';
+    const userFolder = path.resolve(`models`, `MODULAR_CODE`, `Testing`);
 
-    const userResultFolder = path.resolve(`${userFolder}`, `${result}`);
-    MYFOLDERPATH = userFolder;
+    // const userResultFolder = path.resolve(`${userFolder}`, `${result}`);
+    // MYFOLDERPATH = userFolder;
 
-    try {
-        if (!fs.existsSync(userFolder)) {
-            fs.mkdirSync(userFolder);
-        }
+    // try {
+    //     if (!fs.existsSync(userFolder)) {
+    //         fs.mkdirSync(userFolder);
+    //     }
 
-        if (!fs.existsSync(userResultFolder)) {
-            fs.mkdirSync(userResultFolder);
-        }
-    } catch (err) {
-        console.error(err);
-    }
+    //     if (!fs.existsSync(userResultFolder)) {
+    //         fs.mkdirSync(userResultFolder);
+    //     }
+    // } catch (err) {
+    //     console.error(err);
+    // }
     req.session.folderpath = userFolder;
-    console.log(req.session.folderpath,"folder path");
+    console.log(req.session.folderpath, 'folder path');
 
     return userFolder;
 };
