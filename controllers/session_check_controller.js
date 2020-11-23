@@ -3,6 +3,6 @@ exports.check_session= function(req,res){
 	if(req.session.user!= null){
 		flag=true;
 	}
-    console.log(flag);
+   // console.log(flag);
     return flag;
 }

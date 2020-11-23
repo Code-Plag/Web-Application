@@ -1,5 +1,5 @@
-const googleAuthenticate = require('./googleAuthenticate.js');
-const registerViaGoogle = require('./registerViaGoogle.js');
+const googleAuthenticate = require('../models/googleAuthenticate.js');
+const registerViaGoogle = require('../models/registerViaGoogle.js');
 
 module.exports.GoogleStrategyCallback = async (accessToken, refreshToken, profile, done) => {
     // passport callback function

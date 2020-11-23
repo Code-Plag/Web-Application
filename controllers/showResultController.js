@@ -1,5 +1,5 @@
-const putFolderName = require('./PutFolderName.js');
-const loadFunction = require('./loaderFunction.js');
+const putFolderName = require('../models/PutFolderName.js');
+const loadFunction = require('../models/loaderFunction.js');
 
 exports.fetchResult = async (req, res) => {
     await putFolderName.CompFolder(req, res);

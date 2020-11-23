@@ -32,6 +32,7 @@ const paymentRouter = require('./routes/paymentRoute');
 const logoutRouter = require('./routes/logoutRoute');
 const forgetPasswordRouter = require('./routes/forgetPasswordRoute');
 const checkFolderRouter = require('./routes/checkFolderRoute');
+const checkStatusRouter = require('./routes/checkStatusRoute');
 const ShowComparisonRouter = require('./routes/ShowComparisonRoute');
 const ShowDashBoard = require('./routes/dashboardRoute');
 
@@ -108,6 +109,7 @@ app.use('/api/v1/checkplag', checkPlagRouter);
 app.use('/api/v1/upload-multiple-files', uploadFilesRouter);
 app.use('/api/v1/showResult', showResultRouter);
 app.use('/api/v1/checkFolder', checkFolderRouter);
+app.use('/api/v1/checkStatus', checkStatusRouter);
 app.use('/api/v1/payment', paymentRouter);
 app.use('/api/v1/logout', logoutRouter);
 app.use('/api/v1/showComparison', ShowComparisonRouter);

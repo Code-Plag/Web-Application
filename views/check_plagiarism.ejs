@@ -101,9 +101,10 @@
               <p class="text-center display-4">Check plagiarism </p>
               <hr>
               <div>
-                  All your files successfully uploaded to server...
+                 <h3> All your files successfully uploaded to server... <br>
                   Ready for plagiarism check
-              </div>       
+                </h3>
+                </div>       
               <div>
                 <table class="table table-borderless">
                     <tbody>
@@ -116,13 +117,13 @@
                         <td><%= details.language%></td>
                       </tr>
                       <tr>
-                        <td colspan="2">No of files</td>
+                        <td >No of files</td>
                         <td><%= details.no_of_files%></td>
                       </tr>
                     </tbody>
                   </table>
-                 <div>
-                     <button class="btn btn-block btn-secondary" ><a href="/api/v1/checkplag"> Check Plagiarism </a></button>
+                 <div class="mb-5">
+                     <button class="btn btn-block btn-secondary text-light" ><a class="text-light" href="/api/v1/checkplag"><h3>Check Plagiarism</h3>  </a></button>
                  </div>
               </div>
           </div>      

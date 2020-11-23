@@ -109,6 +109,10 @@
                   <button type="button" class="close" onclick="addBlock1()"  >&times;</button>
                   <strong>Error! </strong>Please select more than one file.
                 </div>
+                <div class="alert alert-danger alert-dismissible d-none " id="alertBox2">
+                  <button type="button" class="close"   >&times;</button>
+                  <strong>Error! </strong>choose another name
+                </div>
                 <div class="form-group">
                   <input
                     type="text"
@@ -199,9 +203,10 @@
       
     document.getElementById('datetime').value = new Date().toLocaleString() ;
      
-      return !invalid && (noOfFiles >= 2) && is_valid_folder ;
+      return !invalid  && is_valid_folder && (noOfFiles >= 2) ;
     }
     function check_folder_name(){
+     
       var foldername = document.getElementById('folder').value;
       var a = 'foldername='+foldername;
       var xhttp = new XMLHttpRequest();
@@ -210,13 +215,26 @@
           if (this.readyState == 4 && this.status == 200) {
             var myobj=JSON.parse(this.responseText);
             is_valid_folder = myobj.value;
+            console.log("inside ajax",is_valid_folder);
+            if(!is_valid_folder  ){
+         
+         document.getElementById("alertBox2").innerHTML = ' foldername already exists';
+         document.getElementById("alertBox2").classList.remove("d-none");
+         document.getElementById('folder').value='';
+       }
+       else  {
+        
+         document.getElementById("alertBox2").classList.add("d-none"); 
+         checkforblank()       
+       }
           }
         };
         xhttp.open("POST",'/api/v1/checkFolder', true);
         xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xhttp.send(a);
-        if(!is_valid_folder)
-        document.getElementById("alertBox1").classList.remove("d-none");
+        
+       
+        
     }
     function addBlock(){
         document.getElementById("alertBox").classList.add("d-none");        

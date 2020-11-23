@@ -1,5 +1,5 @@
-const VerifyPasswordLink = require('./verifyResetPasswordLink.js');
-const resettingPassword = require('./resettingPassword.js');
+const VerifyPasswordLink = require('../models/verifyResetPasswordLink.js');
+const resettingPassword = require('../models/resettingPassword.js');
 
 exports.resetPasswordmail = function (req, res) {
     VerifyPasswordLink.resetpasswordemailverify(req, res);

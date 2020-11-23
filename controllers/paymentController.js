@@ -1,4 +1,4 @@
-const razorPay = require('./razorpay.js');
+const razorPay = require('../models/razorpay.js');
 const getPaymentinfo = require('../models/getpaymentInfo.js');
 
 exports.paymentPage = (req, res) => {

@@ -13,7 +13,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="checker()">
     <!--NAV-BAR-->
     <%- include('partials/navbar') %>
 
@@ -38,19 +38,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% 
-                            for(let i = 0 ; i < results.length ;i++){
+                            <% var stop_reload=true;
+                            for(let j = 0 ; j < results.length ;j++){
 	
-                                if(results[i].status == "Pending"){
+                                if(results[j].status == "pending"){
+                                    stop_reload=false;
                             %>
+                            <div id="stop_reload" hidden><%= stop_reload %></div>
                             <tr>
-                                <td><%= i+1%></td>
-                                <td><%= results[i].folderName%></td>
-                                <td><%= results[i].language%></td>
-                                <td><%= results[i].fileCount%></td>
-                                <td><%= results[i].ComparisonDate%></td>
-                                <td>
-                                    <a href=<%="/api/v1/showComparison?compid="+results[i].compid %>> <button class="btn   btn-info">Details</button> </a>
+                                <td><%= j+1%></td>
+                                <td><%= results[j].folderName%></td>
+                                <td><%= results[j].language%></td>
+                                <td><%= results[j].fileCount%></td>
+                                <td><%= results[j].ComparisonDate%></td>
+                                <td >
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                      </div>
+                                      
                                 </td>
                             </tr>
                                 <%
@@ -58,7 +63,8 @@
                             }%>
                         </tbody>
                     </table>
-                </div>        
+                </div>
+                <a href="/api/v1/dashboard" id="myCheck" style="display: none;"></a>   
 
 <h3 class="text-center text-success">Completed</h3>
                 <div class="table-responsive text-center mt-2 justify-content-center align-items-center">
@@ -135,6 +141,56 @@
      <%- include('partials/footer') %>
     
     <!-- Optional JavaScript -->
+    <script>
+        var flag1=document.getElementById('stop_reload').innerHTML;
+        var flag;
+        if(flag1=='false'){
+            flag=false;
+        }
+        else if(flag1=='true'){
+            flag=true;
+        }
+        console.log('hi',flag);
+        var id;
+        function checker() {
+            if(flag==false){
+               id =  setInterval(() => {
+                   console.log("hiii ")
+                    check_status();
+                  }, 25000);
+            }
+        
+        }
+       
+        function check_status() {
+            console.log('hello inside ajax')
+            var xhttp = new XMLHttpRequest();
+                 xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myobj=JSON.parse(this.responseText);
+                        console.log(myobj);
+                        if(myobj[0].count==0){
+                            console.log('hi',myobj);
+                            flag=true;
+                            clearInterval(id);
+                            document.getElementById("myCheck").click();
+                        }
+                        
+                    }
+                }
+                    xhttp.open("GET",'/api/v1/checkStatus', true);
+                    xhttp.send();
+                   // xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                  
+
+
+
+        } 
+        
+       
+      
+
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -145,6 +201,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>

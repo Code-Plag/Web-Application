@@ -1,7 +1,7 @@
-const userDirectory = require('./controllers/userDirectory.js');
+const userDirectory = require('../models/userDirectory.js');
 
 module.exports.loginCallback = (req, res) => {
-    console.log('i am not authenticated');
+   // console.log('i am not authenticated');
     userDirectory.CreateUserDirectory(req, res);
 
     return res.status(200).redirect('/');
