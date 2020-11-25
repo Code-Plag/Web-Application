@@ -21,16 +21,13 @@ module.exports.resetpasswordemailverify = function (req, res) {
 
         try {
             var decoded = jwt.verify(token, secret);
-        //    console.log('hiii');
-        //    console.log(decoded);
+            res.render('update_password.ejs');
+            Connection.end();
+            return;
         } catch (err) {
             console.log('token is not valid some error in data');
-            res.send('your link time has expired ');
         }
         // TODO: Gracefully handle decoding issues.
         // Create form to reset password.
-
-        res.render('update_password.ejs');
-        Connection.end();
     });
 };

@@ -4,17 +4,18 @@ var jwt = require('jsonwebtoken');
 var Send_Mail = require('./sendmail.js');
 const path = require('path');
 
-module.exports.passwordreset = function (req, res) {
+module.exports.passwordreset = async function (req, res) {
     if (req.body.email !== undefined) {
+        console.log(req.body.email);
         var emailAddress = req.body.email;
 
         let Connection = mysql.createConnection(Config);
         let sql = `select * from users WHERE email= ?`;
         let data = [emailAddress];
         Connection.connect();
-        Connection.query(sql, data, function (err, results) {
+        Connection.query(sql, data, async function (err, results) {
             if (err) throw err;
-           // console.log(results);
+            // console.log(results);
 
             var payload = {
                 id: results[0].userid, // User ID from database
@@ -25,7 +26,7 @@ module.exports.passwordreset = function (req, res) {
             var secret = results[0].password + '-' + results[0].updated_at;
 
             var token = jwt.sign(payload, secret);
-           // console.log(token);
+            // console.log(token);
             let link = 'http://' + req.get('host') + '/api/v1/resetpassword/' + payload.id + '/' + token;
             let mailOption = {
                 from: process.env.EMAIL, // sender address
@@ -36,19 +37,20 @@ module.exports.passwordreset = function (req, res) {
                     link +
                     '"> here </a> to verify.',
             };
-            async function resetpasswordmail() {
+
+            async function resetpasswordmail(mailOption) {
                 const result = await Send_Mail.wrapedSendmail(mailOption);
             }
-            resetpasswordmail()
-                .then((result) => {
-                   // console.log(result);
-                    Connection.end();
-                    res.render('resetpassword.ejs');
-                })
-                .catch((err) => {
-                    console.log(error);
-                });
-                Connection.end();
+
+            try {
+                let result = await resetpasswordmail(mailOption);
+
+                res.redirect('/api/v1/getConfirmationPage');
+                console.log(result);
+            } catch (err) {
+                console.log(err);
+            }
+            Connection.end();
         });
     } else {
         res.send('Email address is missing.');
