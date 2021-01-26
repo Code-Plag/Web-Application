@@ -18,10 +18,10 @@ exports.getloginPage = function (req, res) {
 exports.userlogin = function (req, res) {
     //Authenticate.authenticate(req, res);
 
-    //console.log('Inside POST /login callback');
+    console.log('Inside POST /login callback');
   //  console.log(req.body.email);
     req.session.user = req.body.email;
-    req.session.email = req.body.email;
+req.session.email = req.body.email;
     passport.authenticate('local', (err, user, info) => {//done(null,false)
  //       console.log('inside callback of passport authenticate',user);
         req.login(user, (err) => {

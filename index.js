@@ -35,7 +35,7 @@ const checkFolderRouter = require('./routes/checkFolderRoute');
 const checkStatusRouter = require('./routes/checkStatusRoute');
 const ShowComparisonRouter = require('./routes/ShowComparisonRoute');
 const ShowDashBoard = require('./routes/dashboardRoute');
-
+const aboutUsRouter = require('./routes/aboutUsRoute');
 /*                                                                              
 MIDDLEWARE STACK
 
@@ -114,7 +114,7 @@ app.use('/api/v1/payment', paymentRouter);
 app.use('/api/v1/logout', logoutRouter);
 app.use('/api/v1/showComparison', ShowComparisonRouter);
 app.use('/api/v1/dashboard', ShowDashBoard);
-
+app.use('/api/v1/contactus',aboutUsRouter);
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         next();

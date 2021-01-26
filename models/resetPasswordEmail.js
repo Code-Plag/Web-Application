@@ -48,7 +48,7 @@ module.exports.passwordreset = function (req, res) {
                 .catch((err) => {
                     console.log(error);
                 });
-                Connection.end();
+               
         });
     } else {
         res.send('Email address is missing.');

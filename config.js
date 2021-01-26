@@ -1,8 +1,8 @@
 
 config={
-    host:'code-plag.cyeitizrgvbl.us-east-1.rds.amazonaws.com',
-    user:'admin',
-    password:'codeplag',
+    host:'localhost',
+    user:'root',
+    password:'Laxman@1594',
     database:'codeplag'
 }
 

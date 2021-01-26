@@ -1,287 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  <style>
-    .files input {
-    outline: 2px dashed #92b0b3;
-    outline-offset: -10px;
-    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    padding: 120px 0px 85px 35%;
-    text-align: center !important;
-    margin: 0;
-    width: 100% !important;
-    }
-    .files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
-        -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-        transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
-    }
-    .files{ position:relative}
-    .files:after {  pointer-events: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 50px;
-        right: 0;
-        height: 56px;
-        content: "";
-        background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
-        display: block;
-        margin: 0 auto;
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
-    .color input{ background-color:#f1f1f1;}
-    .files:before {
-        position: absolute;
-        bottom: 10px;
-        left: 0;  pointer-events: none;
-        width: 100%;
-        right: 0;
-        height: 57px;
-        content: "";
-        display: block;
-        margin: 0 auto;
-        color: #2ea591;
-        font-weight: 600;
-        text-transform: capitalize;
-        text-align: center;
-    }
-  </style>
-  <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  
+    <head>
+        <style>
+            .files input {
+                outline: 2px dashed #92b0b3;
+                outline-offset: -10px;
+                -webkit-transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+                transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+                padding: 120px 0px 85px 35%;
+                text-align: center !important;
+                margin: 0;
+                width: 100% !important;
+            }
+            .files input:focus {
+                outline: 2px dashed #92b0b3;
+                outline-offset: -10px;
+                -webkit-transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+                transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+                border: 1px solid #92b0b3;
+            }
+            .files {
+                position: relative;
+            }
+            .files:after {
+                pointer-events: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 50px;
+                right: 0;
+                height: 56px;
+                content: '';
+                background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+                display: block;
+                margin: 0 auto;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+            .color input {
+                background-color: #f1f1f1;
+            }
+            .files:before {
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                pointer-events: none;
+                width: 100%;
+                right: 0;
+                height: 57px;
+                content: '';
+                display: block;
+                margin: 0 auto;
+                color: #2ea591;
+                font-weight: 600;
+                text-transform: capitalize;
+                text-align: center;
+            }
+        </style>
+        <link rel="icon" href="/assets/img/codeplag_icon.png" />
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  </head>
+        <title>Upload-files</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <body>
-       <!-- navbar component--> 
-    <%- include('partials/navbar') %>
-       <!-- main component-->  
-       <div class="container-fluid ">
-        <div class="row justify-content-center mt-4" >        
-          <div class="col-md-5 shadow"  >        
-              <p class="text-center display-4">Start Checking Files</p>
-              <hr>       
-              <form class="m-2 p-2" onsubmit="return checkforblank()" method="POST" action="/api/v1/upload-multiple-files" enctype="multipart/form-data">
-                <div class="alert alert-danger alert-dismissible d-none " id="alertBox">
-                  <button type="button" class="close" onclick="addBlock()"  >&times;</button>
-                  <strong>Error! </strong>Please Choose Language.
+        <link
+            href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            rel="stylesheet"
+            id="bootstrap-css"
+        />
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+
+    <body>
+        <!-- navbar component-->
+        <%- include('partials/navbar') %>
+        <!-- main component-->
+        <div class="container-fluid">
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-5 shadow">
+                    <p class="text-center display-4">Start Checking Files</p>
+                    <hr />
+                    <form
+                        class="m-2 p-2"
+                        onsubmit="return checkforblank()"
+                        method="POST"
+                        action="/api/v1/upload-multiple-files"
+                        enctype="multipart/form-data"
+                    >
+                        <div class="alert alert-danger alert-dismissible d-none" id="alertBox">
+                            <button type="button" class="close" onclick="addBlock()">&times;</button>
+                            <strong>Error! </strong>Please Choose Language.
+                        </div>
+                        <div class="alert alert-danger alert-dismissible d-none" id="alertBox1">
+                            <button type="button" class="close" onclick="addBlock1()">&times;</button>
+                            <strong>Error! </strong>Please select more than one file.
+                        </div>
+                        <div class="alert alert-danger alert-dismissible d-none" id="alertBox2">
+                            <button type="button" class="close">&times;</button>
+                            <strong>Error! </strong>choose another name
+                        </div>
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                onblur="check_folder_name()"
+                                class="form-control"
+                                name="foldername"
+                                id="folder"
+                                placeholder="Folder Name"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <select id="language" name="language" class="form-control" onchange="checkforblank()">
+                                <option disabled selected hidden>Choose Language</option>
+                                <option>c/c++</option>
+                                <option>java</option>
+                                <option>python</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                hidden
+                                class="form-control"
+                                name="ComparisonDate"
+                                id="datetime"
+                                value=""
+                            />
+                        </div>
+
+                        <div class="form-group files color">
+                            <input
+                                type="file"
+                                name="multiple_files"
+                                class="form-control"
+                                multiple
+                                accept=""
+                                id="file"
+                                onchange="return fileValidation()"
+                                disabled
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="form-control btn btn-info" name="" />
+                        </div>
+                    </form>
                 </div>
-                <div class="alert alert-danger alert-dismissible d-none " id="alertBox1">
-                  <button type="button" class="close" onclick="addBlock1()"  >&times;</button>
-                  <strong>Error! </strong>Please select more than one file.
-                </div>
-                <div class="alert alert-danger alert-dismissible d-none " id="alertBox2">
-                  <button type="button" class="close"   >&times;</button>
-                  <strong>Error! </strong>choose another name
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    onblur="check_folder_name()"
-                    class="form-control "
-                    name="foldername"
-                    id="folder"
-                    placeholder="Folder Name"
-                    required
-                  />
-                </div>
-                <div class="form-group">           
-                  <select id="language" name="language" class="form-control" onchange="checkforblank()" >
-                    <option disabled selected hidden>Choose Language</option>
-                    <option>c/c++</option>
-                    <option>java</option>
-                    <option>python</option>
-                  </select>
-                </div>
-                <div class="form-group">           
-                  <input
-                  type="text"
-                  hidden
-                  class="form-control "
-                  name="ComparisonDate"
-                  id='datetime'
-                  value=''
-                />
-                </div>
-  
-                <div class="form-group files color">
-                  <input type="file" name="multiple_files" class="form-control" multiple accept="" id="file"
-                    onchange="return fileValidation()" disabled />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="submit"
-                    class="form-control btn btn-info"
-                    name=""/>
-                </div>
-              </form>
-          </div>      
+            </div>
         </div>
-      </div>
-      <%- include('partials/footer') %>
+        <%- include('partials/footer') %>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    var is_valid_folder= false;
-    function checkforblank(){
-      
-      var location = document.getElementById('language');
-      var invalid = location.value == "Choose Language";
-      console.log(invalid);
-      
-      var fileInput = document.getElementById('file');
-    
-      var noOfFiles = fileInput.files.length;
-      console.log(noOfFiles);
-      if( noOfFiles < 2){
-        document.getElementById("alertBox1").classList.remove("d-none");
-      }
-      else{}
-      if (invalid) {
-          document.getElementById("alertBox").classList.remove("d-none");                
-      }
-      else { 
-          var language = location.value;
-          console.log(language);
-          if( language == "c/c++" ){
-            document.getElementById("file").accept = ".c, .h, .C, .H,.cpp, .h, .cc, .hh, .c++, .hpp, .h++, .H, .hxx";
-            document.getElementById("file").disabled = false;
-          }
-          
-          else if( language == "java" ){
-            document.getElementById("file").accept = ".java";
-            document.getElementById("file").disabled = false;
-          }
-          else if( language == "python" ){
-            document.getElementById("file").accept = ".py";
-            document.getElementById("file").disabled = false;
-          }         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            var is_valid_folder = false;
+            function checkforblank() {
+                var location = document.getElementById('language');
+                var invalid = location.value == 'Choose Language';
+                console.log(invalid);
 
-          console.log(document.getElementById("file").accept);
-      }  
-      
-    document.getElementById('datetime').value = new Date().toLocaleString() ;
-     
-      return !invalid  && is_valid_folder && (noOfFiles >= 2) ;
-    }
-    function check_folder_name(){
-     
-      var foldername = document.getElementById('folder').value;
-      var a = 'foldername='+foldername;
-      var xhttp = new XMLHttpRequest();
+                var fileInput = document.getElementById('file');
 
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            var myobj=JSON.parse(this.responseText);
-            is_valid_folder = myobj.value;
-            console.log("inside ajax",is_valid_folder);
-            if(!is_valid_folder  ){
-         
-         document.getElementById("alertBox2").innerHTML = ' foldername already exists';
-         document.getElementById("alertBox2").classList.remove("d-none");
-         document.getElementById('folder').value='';
-       }
-       else  {
-        
-         document.getElementById("alertBox2").classList.add("d-none"); 
-         checkforblank()       
-       }
-          }
-        };
-        xhttp.open("POST",'/api/v1/checkFolder', true);
-        xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xhttp.send(a);
-        
-       
-        
-    }
-    function addBlock(){
-        document.getElementById("alertBox").classList.add("d-none");        
-    }
-    function addBlock1(){
-        document.getElementById("alertBox1").classList.add("d-none");        
-    }
-    function fileValidation() { 
-      var fileInput = document.getElementById('file'); 
-    
-      var filePath = fileInput.value;
-      var totalSize = 0;
-      for (var i = 0; i <= fileInput.files.length - 1; i++) {
+                var noOfFiles = fileInput.files.length;
+                console.log(noOfFiles);
+                if (noOfFiles < 2) {
+                    document.getElementById('alertBox1').classList.remove('d-none');
+                } else {
+                }
+                if (invalid) {
+                    document.getElementById('alertBox').classList.remove('d-none');
+                } else {
+                    var language = location.value;
+                    console.log(language);
+                    if (language == 'c/c++') {
+                        document.getElementById('file').accept =
+                            '.c, .h, .C, .H,.cpp, .h, .cc, .hh, .c++, .hpp, .h++, .H, .hxx';
+                        document.getElementById('file').disabled = false;
+                    } else if (language == 'java') {
+                        document.getElementById('file').accept = '.java';
+                        document.getElementById('file').disabled = false;
+                    } else if (language == 'python') {
+                        document.getElementById('file').accept = '.py';
+                        document.getElementById('file').disabled = false;
+                    }
 
-        var fsize = fileInput.files.item(i).size;      // THE SIZE OF THE FILE.
+                    console.log(document.getElementById('file').accept);
+                }
 
-        // SHOW THE EXTRACTED DETAILS OF THE FILE.
-        console.log("size: "+fsize);
-        totalSize += fsize;
-      }
-      if( totalSize > 2000000 ){
-          alert('file size should be less than 2Mb'); 
-          fileInput.value = ''; 
-          return false; 
-        }
+                document.getElementById('datetime').value = new Date().toLocaleString();
 
-      //console.log(filePath); 
-      // Allowing file type 
-      var location = document.getElementById('language');
-      var language = location.value;
+                return !invalid && is_valid_folder && noOfFiles >= 2;
+            }
+            function check_folder_name() {
+                var foldername = document.getElementById('folder').value;
+                var a = 'foldername=' + foldername;
+                var xhttp = new XMLHttpRequest();
 
-      if( language == "c/c++" ){
-            var allowedExtensions = /(\.c|\.C|\.h|\.H|\.cpp|\.h|\.cc|\.hh|\.c\+\+|\.hpp|\.h\+\+|\.H|\.hxx)$/i; 
-          }
-          else if( language == "java" ){
-            var allowedExtensions = /(\.java)$/i; 
-          }
-          else if( language == "python" ){
-            var allowedExtensions = /(\.ipynb|\.IPYNB|\.py)$/i; 
-          }         
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myobj = JSON.parse(this.responseText);
+                        is_valid_folder = myobj.value;
+                        console.log('inside ajax', is_valid_folder);
+                        if (!is_valid_folder) {
+                            document.getElementById('alertBox2').innerHTML = ' foldername already exists';
+                            document.getElementById('alertBox2').classList.remove('d-none');
+                            document.getElementById('folder').value = '';
+                        } else {
+                            document.getElementById('alertBox2').classList.add('d-none');
+                            checkforblank();
+                        }
+                    }
+                };
+                xhttp.open('POST', '/api/v1/checkFolder', true);
+                xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhttp.send(a);
+            }
+            function addBlock() {
+                document.getElementById('alertBox').classList.add('d-none');
+            }
+            function addBlock1() {
+                document.getElementById('alertBox1').classList.add('d-none');
+            }
+            function fileValidation() {
+                var fileInput = document.getElementById('file');
 
-      if (!allowedExtensions.exec(filePath)) { 
-        alert('Invalid file type'); 
-        fileInput.value = ''; 
-        return false; 
-      } 
-    } 
-</script> 
-</body>
+                var filePath = fileInput.value;
+                var totalSize = 0;
+                for (var i = 0; i <= fileInput.files.length - 1; i++) {
+                    var fsize = fileInput.files.item(i).size; // THE SIZE OF THE FILE.
+
+                    // SHOW THE EXTRACTED DETAILS OF THE FILE.
+                    console.log('size: ' + fsize);
+                    totalSize += fsize;
+                }
+                if (totalSize > 2000000) {
+                    alert('file size should be less than 2Mb');
+                    fileInput.value = '';
+                    return false;
+                }
+
+                //console.log(filePath);
+                // Allowing file type
+                var location = document.getElementById('language');
+                var language = location.value;
+
+                if (language == 'c/c++') {
+                    var allowedExtensions = /(\.c|\.C|\.h|\.H|\.cpp|\.h|\.cc|\.hh|\.c\+\+|\.hpp|\.h\+\+|\.H|\.hxx)$/i;
+                } else if (language == 'java') {
+                    var allowedExtensions = /(\.java)$/i;
+                } else if (language == 'python') {
+                    var allowedExtensions = /(\.ipynb|\.IPYNB|\.py)$/i;
+                }
+
+                if (!allowedExtensions.exec(filePath)) {
+                    alert('Invalid file type');
+                    fileInput.value = '';
+                    return false;
+                }
+            }
+        </script>
+    </body>
 </html>

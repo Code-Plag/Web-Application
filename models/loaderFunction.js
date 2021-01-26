@@ -20,7 +20,7 @@ module.exports.loader =  async function (req, res) {
 	Connection.connectAsync();
 
 	var results = await Connection.queryAsync(
-		'SELECT compid,email,folderName,fileCount,ComparisonDate,language,status FROM ComparisonHistory WHERE email = ? order by comparisonTime ',[email]);
+		'SELECT compid,email,folderName,fileCount,ComparisonDate,language,status FROM ComparisonHistory WHERE email = ? order by comparisonTime desc',[email]);
 		Connection.endAsync();
 	} catch (error) {
 		console.log('error here');

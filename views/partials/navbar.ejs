@@ -1,58 +1,60 @@
 <!-- navbar-->
 
-
 <!-- navbar-->
 <nav class="navbar navbar-expand-sm navbar-light bg-light shadow sticky-top" style="background-color: whitesmoke">
-  <a class="navbar-brand" href="#">🅲🅾🅳🅴-🅿🅻🅰🅶</a>
-  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavId">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <% if(!session) {%>
-      <li class="nav-item ml-4">
-        <a class="nav-link" href="/api/v1/"><b>Home </b></a>
-      </li>
-      <li class="nav-item ml-4">
-        <a class="nav-link" href="#"> <b>Pricing </b> </a>
-      </li>
-      <li class="nav-item ml-4">
-        <a class="nav-link" href="#"><b>Contact-us </b></a>
-      </li>
-      <%}else {%>
-        <li class="nav-item ml-4">
-          <a class="nav-link" href="/api/v1/dashboard"><b>Dashboard</b></a>
-        </li>
-        <li class="nav-item ml-4">
-          <a class="nav-link" href="/api/v1/upload-multiple-files"> <b>Upload & Start Checking</b> </a>
-        </li>
+    <a class="navbar-brand" href="/api/v1/">🅲🅾🅳🅴-🅿🅻🅰🅶</a>
+    <button
+        class="navbar-toggler d-lg-none"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <% if(!session) {%>
+            <li class="nav-item ml-4">
+                <a class="nav-link" href="/api/v1/"><b>Home </b></a>
+            </li>
+            <li class="nav-item ml-4">
+                <a class="nav-link" href="/api/v1/contactus"><b>Contact-us </b></a>
+            </li>
+            <%}else {%>
+            <li class="nav-item ml-4">
+                <a class="nav-link" href="/api/v1/dashboard"><b>Dashboard</b></a>
+            </li>
+            <li class="nav-item ml-4">
+                <a class="nav-link" href="/api/v1/upload-multiple-files"> <b>Upload & Start Checking</b> </a>
+            </li>
 
-        <%}%>
-    </ul>
-    <ul class="navbar-nav">
-      
-      <li class="nav-item dropdown">
-        <a
-        class="nav-link dropdown-toggle mr-4" href="#" id="dropdownId"
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <% if(!session) {%>
-        Login/Register
-        <%}else {%>
-          <%=username%>
-          <%}%>
-      </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownId">
-          <% if(!session) {%>
-          <a class="dropdown-item" href="/api/v1/login">Login</a> 
-          <a class="dropdown-item" href="/api/v1/signup">Register
-          </a>
-          <%}else {%>
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="/api/v1/logout">Logout</a>
             <%}%>
-        </div></li> 
-    </ul>
-  </div>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle mr-4"
+                    href="#"
+                    id="dropdownId"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    <% if(!session) {%> Login/Register <%}else {%> <%=username%> <%}%>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <% if(!session) {%>
+                    <a class="dropdown-item" href="/api/v1/login">Login</a>
+                    <a class="dropdown-item" href="/api/v1/signup">Register </a>
+                    <%}else {%>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="/api/v1/logout">Logout</a>
+                    <%}%>
+                </div>
+            </li>
+        </ul>
+    </div>
 </nav>
-
