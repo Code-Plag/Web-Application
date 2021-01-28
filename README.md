@@ -1,4 +1,8 @@
 # Web-Application
+  Visit 
+  www.codeplag.in
+  or
+  https://code-plag.herokuapp.com/api/v1
 
 for windows system 
 
@@ -20,7 +24,7 @@ for windows system
   2. after successfull installation of node modules
   3.run "npm start" and wait till you see message "server is Running at Port 3000";
   4.and application is running 
-  5.in browser go to "localhost:3000/api/v1".
+  5.in browser go to "http://localhost:3000/api/v1".
   6.once you have started mailing smtp you can signup signin and start checking plagiarism 
 
 
