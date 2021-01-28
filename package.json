@@ -4,7 +4,7 @@
 	"description": "palagarism project",
 	"main": "index.js",
 	"scripts": {
-		"start": "nodemon index.js --ignore sessions/ ",
+		"start": "node index.js --ignore sessions/ ",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "team work",
