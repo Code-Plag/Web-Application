@@ -41,7 +41,7 @@ module.exports.passwordreset = async function (req, res) {
             async function resetpasswordmail(mailOption) {
                 const result = await Send_Mail.wrapedSendmail(mailOption);
             }
-<<<<<<< HEAD
+
             resetpasswordmail()
                 .then((result) => {
                    // console.log(result);
@@ -52,7 +52,7 @@ module.exports.passwordreset = async function (req, res) {
                     console.log(error);
                 });
                
-=======
+
 
             try {
                 let result = await resetpasswordmail(mailOption);
@@ -63,7 +63,7 @@ module.exports.passwordreset = async function (req, res) {
                 console.log(err);
             }
             Connection.end();
->>>>>>> d027a4c9ac3eae11ce199861fe239c2d7e9e8d0a
+
         });
     } else {
         res.send('Email address is missing.');

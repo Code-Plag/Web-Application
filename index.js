@@ -35,12 +35,12 @@ const checkFolderRouter = require('./routes/checkFolderRoute');
 const checkStatusRouter = require('./routes/checkStatusRoute');
 const ShowComparisonRouter = require('./routes/ShowComparisonRoute');
 const ShowDashBoard = require('./routes/dashboardRoute');
-<<<<<<< HEAD
+
 const aboutUsRouter = require('./routes/aboutUsRoute');
-=======
+
 const emailConfirmation = require('./routes/emailConfirmationRoute');
 
->>>>>>> d027a4c9ac3eae11ce199861fe239c2d7e9e8d0a
+
 /*                                                                              
 MIDDLEWARE STACK
 

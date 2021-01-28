@@ -26,7 +26,7 @@ req.session.email = req.body.email;
  //       console.log('inside callback of passport authenticate',user);
         req.login(user, (err) => {
             if(user){
-                res.redirect('/api/v1');
+                res.redirect('/api/v1/upload-multiple-files');
             }
             else if(!user){
                 req.session.destroy(function(err) {
