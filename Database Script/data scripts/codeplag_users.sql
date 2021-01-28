@@ -1,0 +1,46 @@
+-- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
+--
+-- Host: code-plag.cyeitizrgvbl.us-east-1.rds.amazonaws.com    Database: codeplag
+-- ------------------------------------------------------
+-- Server version	8.0.20
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+SET @MYSQLDUMP_TEMP_LOG_BIN = @@SESSION.SQL_LOG_BIN;
+SET @@SESSION.SQL_LOG_BIN= 0;
+
+--
+-- GTID state at the beginning of the backup 
+--
+
+SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('1mhcct2t8ki1tflx5','kuldeep singh','kuldeepsinghc322@gmail.com','$2b$10$hBMZ.LSm6Cfqqp2kUy9zoe/5Son5ZAhXxjJ1MrbhOC9vPg/K0uZAq','2020-11-28 20:24:27','2020-11-28 20:24:27','66abd1c87683e8f0b70b4b746466dbd1c4','1606578867149',0),('1mhcctatokhv16k4h','kuldeep singh','kuldeepchoudharyc322@gmail.com','$2b$10$6muKWfhWNBZHBYWatYAz1uOCXLzkwAj8MjzbsoWHoxf9z/pC9i12S','2020-11-24 02:26:59','2020-11-28 20:31:35','2a94c7d0f6bfef6eb389c987be0e29aaf0','1606168618651',1),('1qo7l8bskhu6wdwu','laxman patil','luckypatil15@gmail.com','$2b$10$CeV3ghay4tAfg/OYSaom/.obawrxUCAkCLcNcYf3TEWWcsl.aELku','2020-11-23 12:19:16','2020-11-23 12:19:16','4a828ffba808bd8f879008929f718d8ce6','1606117755500',1),('7mj4p1syki1vjggg','Jaywant patil','patil.jaywant.12et1084@gmail.com','$2b$10$m2gpXC7.xbVxleEKfybll.2O6Id1R1Jf.FW6m.jkLZDN6ZD1CAYse','2020-11-28 15:53:26','2020-11-28 15:53:26','5325ecc0b1a50c71e315b0650ee5354565','1606582405948',0),('7mj4p1syki1vonx3','Yash Patil','ysp551996@gmail.com','$2b$10$PXgxtxlYlWOsFrZqFB8oCOIi2YIDAS4.8a9/1IHuUMQAYkYH9H8X6','2020-11-28 15:57:29','2020-11-28 15:57:29','ca9af17342e06bdaa73910bba0b896407b','1606582648898',0),('7mj4p1syki1w6nse','lakshman patil','abc@gmail.com','$2b$10$F9qHp15fWzNvohJtVjegeOwoBwOpbgYFPJAGCJc4Kqb8JUAtN48di','2020-11-28 16:11:29','2020-11-28 16:11:29','ce7b316d1851d1ab62bc5cb194b84219e9','1606583488537',0),('7mj4p1syki1w9hpu','kuldeep singh','abcd@gmail.com','$2b$10$deMXaYgqXkbX9wQ/J4ZuZOC.z4Er4bebBs21DHPzov4ku/zuQoUsK','2020-11-28 16:13:41','2020-11-28 16:13:41','921c90c84fb2bc5bc393f2e8abe60a97fe','1606583620637',0),('7mj4p2cyki1wdmu6','kuldeep singh','abcde@gmail.com','$2b$10$CWmsnN0KPsk/q18NgL04AuBTJ6TH5ClpnVoZ7CeZqnLauhDy8AcwK','2020-11-28 16:16:54','2020-11-28 16:16:54','168b2b906eec839f023c9b7f787fa670be','1606583813898',0),('7mj4p2cyki1wg84d','lakshman patil','a@gmail.com','$2b$10$2v47/Z27DvuoZbxOEqObIOuJy/2JcNbJdgp1Gnhxik8rMNCInn/F6','2020-11-28 16:18:55','2020-11-28 16:18:55','25981d3cfa2d259b082e733cd1e3707338','1606583934793',0);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-01-26 17:41:03
