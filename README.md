@@ -12,7 +12,7 @@ for windows system
   3.and database schema is updated .
   4.update the your database configuration in config.js file (imp)
  
-# To start Mailing smtp (verfifcation via mail)
+# To start Mailing smtp (verification via mail)
   1.go to .env file
   2.add your email id and password in the EMAIL and PASSWORD section 
   3.if you are using gmail
