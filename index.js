@@ -35,13 +35,19 @@ const checkFolderRouter = require('./routes/checkFolderRoute');
 const checkStatusRouter = require('./routes/checkStatusRoute');
 const ShowComparisonRouter = require('./routes/ShowComparisonRoute');
 const ShowDashBoard = require('./routes/dashboardRoute');
+<<<<<<< HEAD
 const aboutUsRouter = require('./routes/aboutUsRoute');
+=======
+const emailConfirmation = require('./routes/emailConfirmationRoute');
+
+>>>>>>> d027a4c9ac3eae11ce199861fe239c2d7e9e8d0a
 /*                                                                              
 MIDDLEWARE STACK
 
 */
 app.set('view engine', 'ejs');
 app.use(cors());
+
 passport.use(new LocalStrategy({ usernameField: 'email' }, LocalStrategyCallback));
 
 passport.use(
@@ -97,6 +103,16 @@ app.use(passport.session());
 passport.serializeUser(serializeUserCallback);
 
 passport.deserializeUser(deserializeUserCallback);
+
+app.use(function (req, res, next) {
+    if (req.originalUrl && req.originalUrl.split('/').pop() === 'background.jpg') {
+        console.log('favicon  request');
+        return res.sendStatus(204);
+    }
+
+    return next();
+});
+
 app.use('/', homePageRouter);
 app.use('/api/v1', homePageRouter);
 app.use('/api/v1/signup', SignupRouter);
@@ -104,6 +120,8 @@ app.use('/api/v1/verify', verifyemailRouter);
 app.use('/api/v1/login', loginRouter);
 //app.use(`${process.env.BASE_API_URL}/auth/google`);
 app.use('/api/v1/forgotpassword', forgetPasswordRouter);
+app.use('/api/v1/getConfirmationPage', emailConfirmation);
+
 app.use('/api/v1/resetpassword', resetPasswordRouter);
 app.use('/api/v1/checkplag', checkPlagRouter);
 app.use('/api/v1/upload-multiple-files', uploadFilesRouter);

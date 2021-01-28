@@ -54,7 +54,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <% } }%>
+                                <% }} %>
                             </tbody>
                         </table>
                     </div>
@@ -76,14 +76,14 @@
                             <tbody>
                                 <% for(let i = 0 ; i < results.length ;i++){ if(results[i].status == "Completed"){ %>
                                 <tr>
-                                    <td><%= i+1%></td>
-                                    <td><%= results[i].folderName%></td>
-                                    <td><%= results[i].language%></td>
-                                    <td><%= results[i].fileCount%></td>
-                                    <td><%= results[i].ComparisonDate%></td>
+                                    <td><%= (i+1)%></td>
+                                    <td><%= results[i].folderName %></td>
+                                    <td><%= results[i].language %></td>
+                                    <td><%= results[i].fileCount %></td>
+                                    <td><%= results[i].ComparisonDate %></td>
                                     <td>
-                                        <a href="<%" ="/api/v1/showComparison?compid=" +results[i].compid %
-                                            >> <button class="btn btn-info">Details</button>
+                                        <a href="<%='/api/v1/showComparison?compid='+results[i].compid %>">
+                                            <button class="btn btn-info">Details</button>
                                         </a>
                                     </td>
                                 </tr>

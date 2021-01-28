@@ -41,9 +41,9 @@ exports.runPlagEngine = async (req, res) => {
                 req.session.JsonResult = JsonResult;
                 var obj = {};
                 var object = await CreateJsonPlag(JsonResult, obj);
-          //      console.log(Date.now() - start, 'before put folder name');
+                console.log(Date.now() - start, 'before put folder name');
                 await PutFolderName.CompFolder(req, res); // database entry
-            //    console.log(Date.now() - start, 'after put folder name');
+                console.log(Date.now() - start, 'after put folder name');
                 
     
                 if (fs.existsSync(arg1)) {
@@ -108,7 +108,7 @@ function execPromise(command, arg1, arg2, arg3) {
                 reject(error);
                 return;
             }
-         //   console.log('exec promise');
+            console.log(data);
             resolve(data);
         });
     });

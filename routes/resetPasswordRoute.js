@@ -1,9 +1,9 @@
 const express = require('express');
+const app = express();
 
 const resetPasswordController = require('../controllers/resetPasswordController.js');
 
 router = express.Router();
-
 router.get('/:id/:token', resetPasswordController.resetPasswordmail);
 
 router.route('/').post(resetPasswordController.resetPassword);

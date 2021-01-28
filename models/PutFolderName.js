@@ -45,8 +45,8 @@ module.exports.CompFolder =async (req, res) => {
                     console.log(err);
                     reject(err);
                 }
-               // console.log('inserted');
-                //console.log(results)
+                console.log('inserted');
+                console.log(results);
                 Connection.end();
                 resolve(results);
             }
